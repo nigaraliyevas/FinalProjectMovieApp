@@ -1,0 +1,20 @@
+:root {
+  --blue-color: #1f80e0;
+  --blue-color-hover: #3f9fff;
+  --white-color: #fff;
+  --gray-color: #cecfd1;
+  --main-bg-color: #161616;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: white;
+  /* background-color: var(--main-bg-color) !important; */
+}
+.custom-container-lg {
+  max-width: 1620px;
+  margin: 0 auto;
+}

@@ -1,0 +1,42 @@
+.header {
+  background-color: rgba(34, 34, 34, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  background: transparent;
+  z-index: 99;
+  padding: 0;
+  box-shadow: none;
+}
+.navbar-items__logo-icon {
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  border-radius: 50%;
+  font-size: 22px;
+  display: inline-block;
+  padding: 15px 17px;
+}
+.navbar-items__logo-name {
+  color: var(--white-color);
+  margin-left: 18px;
+}
+.navbar-items__list li a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.user-icon {
+  background-color: var(--blue-color);
+  padding: 12px 14px;
+  border-radius: 50%;
+}
+.subscribe-bg {
+  background-color: var(--blue-color);
+  padding: 10px 22px;
+  border-radius: 3px;
+}
+.navbar-items__list-area .navbar-items__list li a {
+  font-size: 18px;
+}
