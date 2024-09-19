@@ -1,4 +1,18 @@
-/* General Slider Styling */
+/* Swiper */
+.swiper-button-prev [data-icon="chevron-left"] {
+  display: none;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
+
+.swiper-button-next [data-icon="chevron-right"] {
+  display: none;
+}
+
+/* Swiper ends */
+/* section slider */
 .slider-bg {
   position: relative;
   width: 100%;
@@ -24,7 +38,10 @@
   background-size: cover;
   background-position: center;
 }
-
+.slider__linked {
+  margin-top: 60px;
+  border-left: 3px solid var(--blue-color);
+}
 .slider-info__header {
   font-size: 62px;
 }
@@ -67,11 +84,12 @@
   margin-right: 5px;
 }
 .slider-video__container img {
-  max-width: 100%;
+  max-width: 850px;
 }
 .slider-video__content button p {
   font-size: 25px;
 }
+
 .slider-video__img-container::before {
   content: "";
   position: absolute;
@@ -105,10 +123,10 @@
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
-
 .slider-video__content:hover .play-button {
   transform: scale(1.5);
 }
+
 .slider-video__content:hover .play-button::after {
   content: "";
   position: absolute;
@@ -124,76 +142,15 @@
 }
 /* play button ends */
 
-/* Responsive Styling */
-@media (max-width: 1200px) {
-  /* Stack slider info and video container vertically */
-  .slider-bg .d-flex {
-    flex-direction: column-reverse;
-    min-height: auto; /* Adjust for shorter viewports */
-  }
-
-  /* Adjust slider information */
-  .slider-info {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .slider-info__header {
-    font-size: 32px;
-  }
-
-  .slider-info__desc p {
-    font-size: 16px;
-  }
-
-  .slider-info__about-list li {
-    font-size: 14px;
-  }
-
-  /* Adjust the video container size */
-  .slider-video__container img {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .slider-video__content button p {
-    font-size: 20px;
-  }
+/* end */
+/* Swiper dots */
+.swiper-pagination-bullet {
+  width: 30px !important;
+  height: 5px;
+  border-radius: 0%;
+  background-color: white !important;
+  opacity: 1;
 }
-
-@media (max-width: 768px) {
-  /* Further reduce text sizes for smaller devices */
-  .slider-info__header {
-    font-size: 28px;
-  }
-
-  .slider-info__desc p {
-    font-size: 14px;
-  }
-
-  .slider-info__about-list li {
-    font-size: 12px;
-  }
-
-  .slider-video__content button p {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 576px) {
-  .slider-info__header {
-    font-size: 24px;
-  }
-
-  .slider-info__desc p {
-    font-size: 12px;
-  }
-
-  .play-button {
-    font-size: 30px;
-  }
-
-  .slider-info__about-list li {
-    font-size: 10px;
-  }
+.swiper-pagination-bullet-active {
+  background-color: var(--blue-color) !important;
 }

@@ -1,0 +1,158 @@
+/* Footer styling */
+.footer {
+  margin-top: 100px;
+  background-color: #141c2b;
+  color: #fff;
+  padding: 40px 0;
+}
+.footer a:hover {
+  color: var(--blue-color-hover);
+  transition: 0.3s;
+}
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.footer-title {
+  font-size: 26px;
+}
+.navbar-items__logo-name a,
+.footer-title {
+  font-weight: 600;
+}
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.footer-list {
+  padding-left: 27px;
+}
+.footer-list li::marker {
+  color: var(--blue-color);
+  font-size: 20px;
+}
+.footer-list li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto";
+  padding: 5px 0 5px 15px;
+  font-size: 18px;
+}
+.footer-brand {
+  flex-basis: 100%;
+  max-width: 25%;
+  margin-bottom: 30px;
+}
+
+.footer-brand .footer-logo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+/* Footer links section */
+.footer-column {
+  flex-basis: 100%;
+  max-width: 20%;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.footer-column h3:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #3f8cff;
+  margin-top: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: "Roboto";
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #3f8cff;
+}
+.footer-links h5 {
+  font-size: 26px;
+  font-weight: 600;
+}
+/* Social media icons */
+.footer-social {
+  margin-top: 20px;
+}
+.footer-social-icons a {
+  color: white;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.footer-social a {
+  margin-right: 15px;
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #3f8cff;
+}
+
+/* Download App section */
+.footer-title {
+  font-family: "Jost";
+  margin-bottom: 18px;
+}
+.footer-download {
+  margin-top: 20px;
+}
+
+.footer-download img {
+  width: 130px;
+  margin-right: 10px;
+}
+
+.footer-download a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@media (max-width: 992px) {
+  .footer-brand,
+  .footer-column {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}

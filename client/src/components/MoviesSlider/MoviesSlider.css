@@ -1,0 +1,97 @@
+/* all-time section */
+.all-time .swiper-button-next::after {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  width: 30px; /* Adjust width if necessary */
+  height: 30px; /* Adjust height if necessary */
+}
+.all-time .swiper-button-prev::after {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  width: 30px; /* Adjust width if necessary */
+  height: 30px; /* Adjust height if necessary */
+}
+.all-time .swiper-button-prev {
+  top: 40%;
+  left: 20px;
+}
+.all-time .swiper-button-next {
+  top: 40%;
+}
+.all-time__content {
+  padding-top: 90px;
+  padding-top: 60px;
+}
+.all-time__slider-area .area a {
+  color: white;
+  background-color: var(--blue-color);
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 10px 15px;
+}
+.all-time__slider > div:first-child a:hover {
+  background-color: var(--blue-color-hover);
+}
+.all-time-container__img {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.all-time-container__img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  opacity: 0;
+  transition: 0.5s ease all;
+}
+.all-time-container__img img {
+  transition: 0.5s ease all;
+  width: 100%;
+}
+.all-time-container__img:hover img {
+  transform: scale(1.1);
+}
+.all-time__slider-header {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+}
+.all-time__slider-item a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+}
+.all-time__slider-item-icon {
+  right: 20px;
+  top: 178px;
+}
+.movie-infos__name:hover {
+  color: var(--blue-color-hover);
+  transition: 0.3s;
+}
+.movie-infos__name,
+.movie-infos__duration {
+  color: white;
+}
+.movie-infos__genre a {
+  color: var(--blue-color) !important;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 500;
+}
+.movie-infos__genre a svg {
+  color: white;
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 5px;
+  position: relative;
+  top: -2px;
+}
+
+.btn:hover {
+  background-color: var(--blue-color-hover) !important;
+  transition: 0.3s;
+}
+/* end */

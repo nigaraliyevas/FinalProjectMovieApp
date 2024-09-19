@@ -1,63 +1,17 @@
-import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import Slider from "react-slick";
+// src/components/CustomSlider.jsx
+import { Swiper, SwiperSlide } from "swiper/react";
+import "/node_modules/swiper/swiper-bundle.min.css"; // Import Swiper styles
+import { Navigation, Autoplay } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "font-awesome/css/font-awesome.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import "/public/assets/common/base.css";
+import { faCirclePlay, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { openModal } from "../../redux/slices/showSlice";
+import VideoModal from "../VideoModal/VideoModal";
 import "./CustomSlider.css";
+import { Link } from "react-router-dom";
 
 const CustomSlider = () => {
-  const [show, setShow] = useState(false);
-  const [currentVideo, setCurrentVideo] = useState("");
-
-  const handleShow = videoUrl => {
-    setCurrentVideo(videoUrl);
-    setShow(true);
-  };
-
-  const handleClose = () => {
-    setShow(false);
-    // setTimeout(() => {
-    //   window.dispatchEvent(new Event("resize"));
-    // }, 500);
-  };
-
-  const resetVideo = () => {
-    const iframe = document.getElementById("youtube-iframe");
-    if (iframe) {
-      const src = iframe.getAttribute("src");
-      iframe.setAttribute("src", "");
-      iframe.setAttribute("src", src);
-    }
-  };
-
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    nextArrow: <FontAwesomeIcon className="fa-chevron-left fa-xl" size="2xl" icon={faChevronRight} />,
-    prevArrow: <FontAwesomeIcon className="fa-chevron-right fa-xl" size="2xl" icon={faChevronLeft} />,
-    // responsive: [
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //       initialSlide: 1,
-    //     },
-    //   },
-    // ],
-  };
+  const dispatch = useDispatch();
 
   const sliderData = [
     {
@@ -107,88 +61,103 @@ const CustomSlider = () => {
   return (
     <section className="slider">
       {/* Modal */}
-      <Modal show={show} onHide={handleClose} onExited={resetVideo} centered size="lg">
-        <Modal.Body className="p-0 overflow-hidden">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe id="youtube-iframe" width="100%" height="500" src={currentVideo} allow="encrypted-media" allowFullScreen title="YouTube Trailer"></iframe>
-          </div>
-        </Modal.Body>
-      </Modal>
+      <VideoModal />
+      {/* Modal ends */}
 
       {/* Slider */}
-      <Slider {...settings}>
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={0}
+        slidesPerView={1}
+        autoplay={{ delay: 3000 }}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
+        loop={true}
+        className="swiper-container"
+      >
         {sliderData.map(slide => (
-          <div key={slide.id} className="slider-bg item min-vh-100">
-            <img className="slider-bg" src={slide.background} alt="" style={{ position: "absolute" }} />{" "}
-            <div className="custom-container-lg">
-              <div className="d-flex min-vh-100 position-relative z-3">
-                <div className="col-lg-6 d-flex align-items-center">
-                  <div className="slider-info text-white position-relative">
-                    <h2 className="slider-info__header text-uppercase mb-4">
-                      <span className="line-vertical"></span> {slide.title}
-                    </h2>
-                    <ul className="slider-info__list d-flex gap-5 p-0">
-                      <li className="slider-info__item slider-info__item--border text-uppercase">Tv-ma</li>
-                      <li className="slider-info__item">{slide.duration}</li>
-                      <li className="slider-info__item text-uppercase">
-                        <a href="#" className="text-decoration-none text-white">
-                          <img width={100} src={slide.imdb} alt="IMDb" className="d-inline-block" />
-                          <span className="l-2">{slide.rating}</span>
-                        </a>
-                      </li>
-                      <li className="slider-info__item text-uppercase">
-                        <a href="#" className="text-decoration-none text-white">
-                          {slide.year}
-                        </a>
-                      </li>
-                      <li className="slider-info__item text-uppercase">
-                        <a href="#" className="text-decoration-none text-white slider-info__item-link">
-                          {slide.genre}
-                        </a>
-                      </li>
-                    </ul>
-                    <div className="slider-info__desc">
-                      <p className="mb-2">{slide.description}</p>
-                    </div>
-                    <div className="slider-info__about mt-2">
-                      <ul className="slider-info__about-list list-unstyled">
-                        <li className="my-3">
-                          <strong>Cast</strong>
-                          <span>{slide.cast}</span>
+          <SwiperSlide key={slide.id} className="swiper-slide">
+            <div className="slider-bg item min-vh-100" style={{ backgroundImage: `url(${slide.background})` }}>
+              <div className="custom-container-lg container-md">
+                <div className="d-flex min-vh-100 position-relative z-3">
+                  <div className="col-lg-6 d-flex align-items-center col-md-6">
+                    <div className="slider-info text-white position-relative">
+                      <h2 className="slider-info__header text-uppercase mb-4">
+                        <span className="line-vertical"></span> {slide.title}
+                      </h2>
+                      <ul className="slider-info__list d-flex gap-5 p-0">
+                        <li className="slider-info__item slider-info__item--border text-uppercase">Tv-ma</li>
+                        <li className="slider-info__item">{slide.duration}</li>
+                        <li className="slider-info__item text-uppercase">
+                          <a href="#" className="text-decoration-none text-white">
+                            <img width={100} src={slide.imdb} alt="IMDb" className="d-inline-block" />
+                            <span className="l-2">{slide.rating}</span>
+                          </a>
                         </li>
-                        <li className="my-3">
-                          <strong>Genre</strong>
-                          <span>{slide.genre}</span>
+                        <li className="slider-info__item text-uppercase">
+                          <a href="#" className="text-decoration-none text-white">
+                            {slide.year}
+                          </a>
                         </li>
-                        <li className="my-3">
-                          <strong>Tags</strong>
-                          <span>{slide.tags}</span>
+                        <li className="slider-info__item text-uppercase">
+                          <a href="#" className="text-decoration-none text-white slider-info__item-link">
+                            {slide.genre}
+                          </a>
                         </li>
                       </ul>
-                    </div>
-                    <div className="slider-info__btn-area mt-4">
-                      <button className="btn playnow-btn text-uppercase text-decoration-none text-white" onClick={() => handleShow(slide.video)}>
-                        Play Now
-                      </button>
+                      <div className="slider-info__desc">
+                        <p className="mb-2">{slide.description}</p>
+                      </div>
+                      <div className="slider-info__about mt-2">
+                        <ul className="slider-info__about-list list-unstyled">
+                          <li className="my-3">
+                            <strong>Cast</strong>
+                            <span>{slide.cast}</span>
+                          </li>
+                          <li className="my-3">
+                            <strong>Genre</strong>
+                            <span>{slide.genre}</span>
+                          </li>
+                          <li className="my-3">
+                            <strong>Tags</strong>
+                            <span>{slide.tags}</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="slider-info__btn-area mt-4">
+                        {/* note to myself: if it is movie has to go -->/movie , if not it is series or tv show has to go detail(in here it will open like dizilla)  */}
+                        <Link to="/movie" className="btn playnow-btn text-uppercase text-decoration-none text-white">
+                          Play Now
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-lg-6 d-flex align-items-center">
-                  <div className="slider-video__container position-relative">
-                    <img src={slide.background} alt="Slider Video" className="slider-video" />
-                    <div className="slider-video__content position-absolute top-50 start-50 translate-middle">
-                      <button className="text-decoration-none text-white btn bg-transparent border-0" onClick={() => handleShow(slide.video)}>
-                        <FontAwesomeIcon className="fa-solid fa-play fa-xl mb-3" icon={faPlay} />
-                        <p className="font-weight-bold">Watch Trailer</p>
-                      </button>
+                  <div className="col-lg-6 d-flex align-items-center col-md-6">
+                    <div className="slider-video__container position-relative">
+                      <img src={slide.background} alt="Slider Video" className="slider-video" />
+                      <div className="slider-video__content position-absolute top-50 start-50 translate-middle">
+                        <button className="text-decoration-none text-white bg-transparent border-0" onClick={() => dispatch(openModal(slide.video))}>
+                          <FontAwesomeIcon size="2xl" className="fa-solid fa-play fa-xl mb-3 play-button" icon={faCirclePlay} />
+                          <p className="font-weight-bold">Watch Trailer</p>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+        <div className="swiper-button-prev">
+          <FontAwesomeIcon className="fa-chevron-left fa-xl" size="2xl" icon={faChevronLeft} />
+        </div>
+        <div className="swiper-button-next">
+          <FontAwesomeIcon className="fa-chevron-right fa-xl" size="2xl" icon={faChevronRight} />
+        </div>
+      </Swiper>
+      {/* Slider ends */}
     </section>
   );
 };

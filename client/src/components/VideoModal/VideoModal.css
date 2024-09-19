@@ -1,0 +1,10 @@
+/* modal */
+.modal-centering {
+  display: flex;
+  align-items: center;
+}
+body.modal-open {
+  overflow: hidden;
+}
+
+/* modal ends */
