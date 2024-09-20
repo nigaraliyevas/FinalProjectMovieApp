@@ -1,5 +1,4 @@
 .header {
-  background-color: rgba(34, 34, 34, 0.4);
   position: absolute;
   top: 0;
   left: 0;
@@ -9,6 +8,14 @@
   z-index: 99;
   padding: 0;
   box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+.header.sticky {
+  position: fixed;
+  top: 0;
+  background-color: #141b29;
+  width: 100%;
 }
 .navbar-items__logo-icon {
   color: var(--white-color);

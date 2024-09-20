@@ -1,6 +1,7 @@
 import MainLayout from "../layout/MainLayout";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
+import Detail from "../components/Detail/Detail";
 // import ProductList from "../pages/ProductFilter/ProductList";
 // import LoginPage from "../pages/Login/LoginPage";
 // import RegisterPage from "../pages/Register/RegisterPage";
@@ -12,7 +13,7 @@ const MainRoutes = () => {
       {/* <ScrollToTop /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
+        <Route path="/detail" element={<Detail />} />
         {/* <Route path="/products" element={<ProductPage />} /> */}
       </Routes>
     </MainLayout>

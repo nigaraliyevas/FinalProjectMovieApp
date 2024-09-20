@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { faPlay, faChevronDown, faMagnifyingGlass, faUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "/node_modules/font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.css";
@@ -10,6 +10,18 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -21,7 +33,7 @@ function Header() {
     setOpenDropdown(openDropdown === index ? null : index); // Toggle dropdown
   };
   return (
-    <header className="header py-3">
+    <header className={`header py-3 ${isSticky ? "sticky" : ""}`}>
       <div className="custom-container-lg">
         <div className="header-navbar navbar-items">
           <nav className="navbar-items__default d-flex align-items-center justify-content-between">

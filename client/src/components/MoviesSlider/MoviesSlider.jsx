@@ -4,7 +4,6 @@ import { Navigation } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons"; // For regular icons
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./MoviesSlider.css";
@@ -100,7 +99,10 @@ const MoviesSlider = () => {
             >
               {allTimeHits.map(item => (
                 <SwiperSlide key={item.id} className="item all-time__slider-item">
-                  <Link to="">
+                  {/* note to myself: if it is movie has to go -->/movie , if not it is series or tv show has to go detail(in here it will open like dizilla)  */}
+                  <Link to="/detail">
+                    {" "}
+                    {/* so this is series */}
                     <div className="all-time-container__img">
                       <img className="position-relative" width="400px" src={item.imgSrc} alt="" />
                     </div>
