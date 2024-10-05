@@ -1,0 +1,27 @@
+.genres-box {
+  padding: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: var(--dark-blue-color);
+}
+.genres-box__header {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.genres-box__item a {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.genres-box__item span,
+.genres-box__item svg {
+  transition: 0.3s;
+}
+.genres-box__item a:hover span,
+.genres-box__item a:hover svg {
+  color: var(--blue-color) !important;
+}
+.genres-box__name {
+  color: white;
+}

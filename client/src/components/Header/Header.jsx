@@ -30,7 +30,7 @@ function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const toggleDropdown = index => {
-    setOpenDropdown(openDropdown === index ? null : index); // Toggle dropdown
+    setOpenDropdown(openDropdown === index ? null : index);
   };
   return (
     <header className={`header py-3 ${isSticky ? "sticky" : ""}`}>
@@ -49,27 +49,23 @@ function Header() {
               <div className="navbar-items__list-area">
                 <ul className="navbar-items__list list-unstyled d-flex gap-4 align-items-center m-0">
                   <li>
-                    <Link to="/" className="text-primary">
+                    <Link style={{ fontSize: "22px" }} to="/" className="text-primary">
                       Home
-                      <FontAwesomeIcon icon={faChevronDown} style={{ color: "#ffffff", display: "inline-block", marginLeft: "10px" }} />
                     </Link>
                   </li>
                   <li>
-                    <Link to="/movies">
+                    <Link style={{ fontSize: "22px" }} to="/movies">
                       Movies
-                      <FontAwesomeIcon icon={faChevronDown} style={{ color: "#ffffff", display: "inline-block", marginLeft: "10px" }} />
                     </Link>
                   </li>
                   <li>
-                    <Link to="/tv-shows">
+                    <Link style={{ fontSize: "22px" }} to="/tvshows">
                       TV Shows
-                      <FontAwesomeIcon icon={faChevronDown} style={{ color: "#ffffff", display: "inline-block", marginLeft: "10px" }} />
                     </Link>
                   </li>
                   <li>
-                    <Link to="/free-movies">
+                    <Link style={{ fontSize: "22px" }} to="/free-movies">
                       Free Movies
-                      <FontAwesomeIcon icon={faChevronDown} style={{ color: "#ffffff", display: "inline-block", marginLeft: "10px" }} />
                     </Link>
                   </li>
                 </ul>
@@ -103,88 +99,19 @@ function Header() {
           <div className={`burger-menu ${isMenuOpen ? "open" : ""}`}>
             <ul className="burger-menu-list list-unstyled">
               <li className={openDropdown === 0 ? "open" : ""}>
-                <a href="#" onClick={() => toggleDropdown(0)}>
-                  Home
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </a>
-                {openDropdown === 0 && (
-                  <ul className="submenu">
-                    <li>
-                      <Link to="/home-subcategory-1">Home Subcategory 1</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-subcategory-2">Home Subcategory 2</Link>
-                    </li>
-                  </ul>
-                )}
+                <Link to="/">Home</Link>
               </li>
 
               <li className={openDropdown === 1 ? "open" : ""}>
-                <a href="#" onClick={() => toggleDropdown(1)}>
-                  Movies
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </a>
-                {openDropdown === 1 && (
-                  <ul className="submenu">
-                    <li>
-                      <Link to="/movies-subcategory-1">Movies Subcategory 1</Link>
-                    </li>
-                    <li>
-                      <Link to="/movies-subcategory-2">Movies Subcategory 2</Link>
-                    </li>
-                  </ul>
-                )}
+                <Link to="/movies">Movies</Link>
               </li>
 
               <li className={openDropdown === 2 ? "open" : ""}>
-                <a href="#" onClick={() => toggleDropdown(2)}>
-                  TV Shows
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </a>
-                {openDropdown === 2 && (
-                  <ul className="submenu">
-                    <li>
-                      <Link to="/tvshows-subcategory-1">TV Shows Subcategory 1</Link>
-                    </li>
-                    <li>
-                      <Link to="/tvshows-subcategory-2">TV Shows Subcategory 2</Link>
-                    </li>
-                  </ul>
-                )}
+                <Link to="/tvshows">TV Shows</Link>
               </li>
 
               <li className={openDropdown === 3 ? "open" : ""}>
-                <a href="#" onClick={() => toggleDropdown(3)}>
-                  Video
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </a>
-                {openDropdown === 3 && (
-                  <ul className="submenu">
-                    <li>
-                      <Link to="/video-subcategory-1">Video Subcategory 1</Link>
-                    </li>
-                    <li>
-                      <Link to="/video-subcategory-2">Video Subcategory 2</Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-
-              <li className={openDropdown === 4 ? "open" : ""}>
-                <a href="#" onClick={() => toggleDropdown(4)}>
-                  Pages
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </a>
-                {openDropdown === 4 && (
-                  <ul className="submenu">
-                    <li>
-                      <Link to="/pages-subcategory-1">Pages Subcategory 1</Link>
-                    </li>
-                    <li>
-                      <Link to="/pages-subcategory-2">Pages Subcategory 2</Link>
-                    </li>
-                  </ul>
-                )}
+                <Link to="/free-movies">Free Movies</Link>
               </li>
             </ul>
           </div>

@@ -3,12 +3,13 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer-custom">
       <div className="custom-container-lg">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-12 footer-brand">

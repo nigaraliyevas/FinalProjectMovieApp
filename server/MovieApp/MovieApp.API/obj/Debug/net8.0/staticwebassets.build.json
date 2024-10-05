@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "tXXvPt6cEYal3PFtgq6WMCI4ocCXP4NwXHru4b1FL8k=",
+  "Source": "MovieApp.API",
+  "BasePath": "_content/MovieApp.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MovieApp.API\\wwwroot",
+      "Source": "MovieApp.API",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\",
+      "BasePath": "_content/MovieApp.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

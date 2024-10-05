@@ -1,0 +1,35 @@
+.filter-by-year-container {
+  background-color: var(--dark-blue-color);
+  padding: 30px;
+}
+.filter-by-year-container h2 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.years-box {
+  max-height: 310px; /* Adjust this as needed for your design */
+  overflow-y: auto; /* Enables vertical scrolling */
+  scrollbar-color: var(--blue-color) var(--dark-color);
+  scrollbar-width: thin;
+  scrollbar-width: 100px;
+}
+
+.year-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.year-item {
+  width: 50%; /* Makes sure two items fit in a row */
+  color: white;
+  display: inline-block;
+  border: 1px solid var(--dark-color);
+  padding: 10px;
+  color: white;
+  transition: 0.5s;
+}
+.year-item:hover {
+  background-color: var(--blue-color);
+}

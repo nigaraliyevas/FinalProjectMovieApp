@@ -1,0 +1,14 @@
+.movie-section {
+  margin-top: 94px;
+}
+.movie-name__title {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.movie-name__title svg {
+  margin-right: 13px;
+}

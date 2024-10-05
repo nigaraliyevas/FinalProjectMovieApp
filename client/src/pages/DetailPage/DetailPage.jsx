@@ -1,12 +1,10 @@
 import Detail from "../../components/Detail/Detail";
-import "/public/assets/common/base.css";
-
 const DetailPage = () => {
   return (
     <>
-      <Detail/>
+      <Detail />
     </>
-  )
-}
+  );
+};
 
-export default DetailPage
+export default DetailPage;

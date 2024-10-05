@@ -24,7 +24,9 @@
   background-size: cover;
   background-position: center;
 }
-
+.slider-info span {
+  color: white;
+}
 .slider-info__header {
   font-size: 62px;
 }

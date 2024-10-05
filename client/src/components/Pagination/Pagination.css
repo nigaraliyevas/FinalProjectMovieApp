@@ -1,0 +1,24 @@
+.pagination {
+  margin-top: 100px;
+}
+.pagination-boxes {
+  text-align: center;
+}
+.pagination-boxes svg {
+  cursor: pointer;
+}
+.pagination-boxes__box {
+  background-color: var(--blue-color);
+  padding: 15px;
+  color: white;
+  transition: 0.3s;
+  margin-right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.pagination-boxes__box:hover {
+  background-color: var(--blue-color-hover);
+}
+.pagination-boxes__box.active {
+  background-color: #124d87;
+}

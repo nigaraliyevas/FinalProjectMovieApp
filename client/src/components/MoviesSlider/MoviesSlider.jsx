@@ -2,80 +2,79 @@ import "/node_modules/swiper/swiper-bundle.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons"; // For regular icons
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./MoviesSlider.css";
-import { Link } from "react-router-dom";
+import MovieCard from "../MovieCard/MovieCard";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+export const allTimeHits = [
+  {
+    id: 1,
+    imgSrc: "./assets/img/all-time-hits/img1.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 2,
+    imgSrc: "./assets/img/all-time-hits/img2.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 3,
+    imgSrc: "./assets/img/all-time-hits/img3.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 4,
+    imgSrc: "./assets/img/all-time-hits/img4.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 5,
+    imgSrc: "./assets/img/all-time-hits/img5.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 6,
+    imgSrc: "./assets/img/all-time-hits/img6.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 7,
+    imgSrc: "./assets/img/all-time-hits/img7.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 8,
+    imgSrc: "./assets/img/all-time-hits/img8.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+  {
+    id: 9,
+    imgSrc: "./assets/img/all-time-hits/img9.jpg",
+    title: "Skull Of Myths",
+    duration: "1hr 24mins",
+    genre: "Action",
+  },
+];
 
 const MoviesSlider = () => {
-  const allTimeHits = [
-    {
-      id: 1,
-      imgSrc: "./assets/img/all-time-hits/img1.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 2,
-      imgSrc: "./assets/img/all-time-hits/img2.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 3,
-      imgSrc: "./assets/img/all-time-hits/img3.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 4,
-      imgSrc: "./assets/img/all-time-hits/img4.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 5,
-      imgSrc: "./assets/img/all-time-hits/img5.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 6,
-      imgSrc: "./assets/img/all-time-hits/img6.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 7,
-      imgSrc: "./assets/img/all-time-hits/img7.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 8,
-      imgSrc: "./assets/img/all-time-hits/img8.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-    {
-      id: 9,
-      imgSrc: "./assets/img/all-time-hits/img9.jpg",
-      title: "Skull Of Myths",
-      duration: "1hr 24mins",
-      genre: "Action",
-    },
-  ];
-
   return (
     <section className="all-time">
       <div className="custom-container-lg">
@@ -100,26 +99,7 @@ const MoviesSlider = () => {
               {allTimeHits.map(item => (
                 <SwiperSlide key={item.id} className="item all-time__slider-item">
                   {/* note to myself: if it is movie has to go -->/movie , if not it is series or tv show has to go detail(in here it will open like dizilla)  */}
-                  <Link to="/detail">
-                    {" "}
-                    {/* so this is series */}
-                    <div className="all-time-container__img">
-                      <img className="position-relative" width="400px" src={item.imgSrc} alt="" />
-                    </div>
-                    <div className="all-time__slider-item-icon position-absolute z-3">
-                      <FontAwesomeIcon icon={faHeart} style={{ color: "#ffffff" }} size="lg" />
-                    </div>
-                    <div className="movie-infos">
-                      <h4 className="movie-infos__name mt-2">{item.title}</h4>
-                      <span className="movie-infos__duration">{item.duration}</span>
-                      <span className="movie-infos__genre">
-                        <Link to={"/action"}>
-                          <FontAwesomeIcon icon={faCircle} />
-                          {item.genre}
-                        </Link>
-                      </span>
-                    </div>
-                  </Link>
+                  <MovieCard id={item.id} title={item.title} duration={item.duration} genre={item.genre} isMovie={"/movie"} imgSrc={item.imgSrc} />
                 </SwiperSlide>
               ))}
               <div className="swiper-button-prev">

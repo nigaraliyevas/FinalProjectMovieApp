@@ -1,20 +1,32 @@
-import MainLayout from "../layout/MainLayout";
 import { Route, Routes } from "react-router-dom";
+import MainLayout from "../layout/MainLayout";
 import HomePage from "../pages/HomePage/HomePage";
-import Detail from "../components/Detail/Detail";
-// import ProductList from "../pages/ProductFilter/ProductList";
-// import LoginPage from "../pages/Login/LoginPage";
-// import RegisterPage from "../pages/Register/RegisterPage";
-// import ProductPage from "../pages/ProductPage/ProductPage";
-// import ScrollToTop from "./ScrollToTop";
+import ShowPage from "../pages/ShowPage/ShowPage";
+import DetailPage from "../pages/DetailPage/DetailPage";
+import MoviePage from "../pages/MoviePage/MoviePage";
+import MoviesPage from "../pages/MoviesPage/MoviesPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RecoverPasswordPage from "../pages/RecoverPasswordPage/RecoverPasswordPage";
+import TvShowsPage from "../pages/TvShowsPage/TvShowsPage";
+import Error404Page from "../pages/Error404Page/Error404Page";
+import PricingPlanPage from "../pages/PricingPlanPage/PricingPlanPage";
+
 const MainRoutes = () => {
   return (
     <MainLayout>
-      {/* <ScrollToTop /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/detail" element={<Detail />} />
-        {/* <Route path="/products" element={<ProductPage />} /> */}
+        <Route path="/show" element={<ShowPage />} />
+        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/movie" element={<MoviePage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/tvshows" element={<TvShowsPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/recover" element={<RecoverPasswordPage />} />
+        <Route path="/pricing-plan" element={<PricingPlanPage />} />
+        <Route path="*" element={<Error404Page />} />
       </Routes>
     </MainLayout>
   );

@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\bin\Debug\net8.0\MovieApp.Core.deps.json
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\bin\Debug\net8.0\MovieApp.Core.dll
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\bin\Debug\net8.0\MovieApp.Core.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.AssemblyInfo.cs
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.sourcelink.json
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.dll
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\refint\MovieApp.Core.dll
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\ref\MovieApp.Core.dll
+C:\Users\User\Desktop\Code Academy\Tasks\FinalProject\server\MovieApp\MovieApp.Core\obj\Debug\net8.0\MovieApp.Core.csproj.AssemblyReference.cache

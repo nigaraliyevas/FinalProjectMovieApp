@@ -1,0 +1,37 @@
+.custom-filter-box {
+  background-color: var(--dark-blue-color);
+  padding: 30px;
+}
+.custom-filter-form label {
+  font-size: 20px;
+}
+.custom-filter-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.custom-filter-form option {
+  font-weight: 500;
+  font-size: 18px;
+}
+.custom-filter__btn {
+  background-color: var(--blue-color);
+  padding: 8px 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: none;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.custom-filter__btn:hover {
+  background-color: var(--blue-color-hover);
+}

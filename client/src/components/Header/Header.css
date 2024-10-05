@@ -165,18 +165,6 @@
   color: #ccc;
 }
 
-/* Dropdown Arrows */
-.burger-menu-list li a:after {
-  content: "\f078";
-  font-family: "FontAwesome";
-  float: right;
-  transition: transform 0.3s ease;
-}
-
-.burger-menu-list li.open a:after {
-  transform: rotate(-180deg);
-}
-
 /* Close (X) Button */
 .burger-menu-icon {
   position: absolute;
