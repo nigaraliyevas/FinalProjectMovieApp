@@ -20,7 +20,7 @@ const CustomFilter = () => {
               <div className="">
                 <select name="" id="">
                   <option value="" disabled selected>
-                    Category
+                    Genre
                   </option>
                   <option value="">s</option>
                   <option value="">m</option>

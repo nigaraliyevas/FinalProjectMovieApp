@@ -12,30 +12,34 @@
             builder.Property(m => m.Summary).IsRequired(true);
             builder.Property(m => m.ReleasedDate).IsRequired(true);
 
-            builder
-                .HasMany(m => m.MovieActors)
-                .WithOne(ma => ma.Movie)
-                .HasForeignKey(ma => ma.MovieId);
+            //builder
+            //    .HasMany(m => m.MovieActors)
+            //    .WithOne(ma => ma.Movie)
+            //    .HasForeignKey(ma => ma.MovieId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .HasMany(m => m.MovieCountries)
-                .WithOne(ma => ma.Movie)
-                .HasForeignKey(ma => ma.MovieId);
+            //builder
+            //    .HasMany(m => m.MovieCountries)
+            //    .WithOne(ma => ma.Movie)
+            //    .HasForeignKey(ma => ma.MovieId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .HasMany(m => m.MovieTags)
-                .WithOne(ma => ma.Movie)
-                .HasForeignKey(ma => ma.MovieId);
+            //builder
+            //    .HasMany(m => m.MovieTags)
+            //    .WithOne(ma => ma.Movie)
+            //    .HasForeignKey(ma => ma.MovieId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .HasMany(m => m.MovieGenres)
-                .WithOne(ma => ma.Movie)
-                .HasForeignKey(ma => ma.MovieId);
+            //builder
+            //    .HasMany(m => m.MovieGenres)
+            //    .WithOne(ma => ma.Movie)
+            //    .HasForeignKey(ma => ma.MovieId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .HasMany(m => m.MovieGenres)
-                .WithOne(ma => ma.Movie)
-                .HasForeignKey(ma => ma.MovieId);
+            //builder
+            //    .HasOne(m => m.OriginalLanguage)
+            //    .WithOne(ol => ol.Movie)
+            //    .HasForeignKey<OriginalLanguage>(ol => ol.MovieId);
 
             builder
                 .HasMany(m => m.Comments)

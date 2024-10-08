@@ -4,7 +4,7 @@ using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using MovieApp.Application.Dtos.MovieDtos;
 using MovieApp.Application.Profiles;
@@ -23,12 +23,18 @@ namespace MovieApp.API
     {
         public static void Register(this IServiceCollection services, IConfiguration config)
         {
-            services.AddControllersWithViews();
-
-            services.AddDbContext<MovieAppDbContext>(options =>
+            services.AddControllers()
+            .ConfigureApiBehaviorOptions(opt =>
             {
-                options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+                opt.InvalidModelStateResponseFactory = context =>
+                {
+                    var errors = context.ModelState.Where(e => e.Value?.Errors.Count > 0)
+                    .Select(x => new Dictionary<string, string>() { { x.Key, x.Value.Errors.First().ErrorMessage } });
+                    return new BadRequestObjectResult(new { message = (string)null, errors });
+                };
             });
+
+            services.AddControllersWithViews();
 
             services.AddHttpContextAccessor();
             services.AddFluentValidationAutoValidation();
@@ -39,6 +45,21 @@ namespace MovieApp.API
 
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IMovieRepository, MovieRepository>();
+
+            services.AddScoped<IActorService, ActorService>();
+            services.AddScoped<IActorRepository, ActorRepository>();
+
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
+
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+
+            services.AddScoped<ITagService, TagService>();
+            services.AddScoped<ITagRepository, TagRepository>();
+
+            services.AddScoped<IOriginalLanguageService, OriginalLanguageService>();
+            services.AddScoped<IOriginalLanguageRepository, OriginalLanguageRepository>();
 
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<ICommentRepository, CommentRepository>();

@@ -12,11 +12,20 @@ namespace MovieApp.Core.Entities
         public byte IMDBRate { get; set; }
         public string MovieURL { get; set; }
         public string MovieTrailerURL { get; set; }
+        //new  added 
+        public string ThumbImg { get; set; }
+        public string ThumbBgImg { get; set; }
+        public bool IsFree { get; set; } = false;
+        //
         public MovieSlider MovieSlider { get; set; }
+        public OriginalLanguage OriginalLanguage { get; set; }//one to one
+
         public List<MovieActor> MovieActors { get; set; }
+
         public List<MovieTag> MovieTags { get; set; }
+
         public List<MovieGenre> MovieGenres { get; set; }
-        public List<OriginalLanguage> OriginalLanguages { get; set; }//one to many
+
         public List<Comment> Comments { get; set; } //one to many
 
         public List<MovieCountry> MovieCountries { get; set; }

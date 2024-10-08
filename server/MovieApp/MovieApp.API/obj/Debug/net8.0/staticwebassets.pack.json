@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\backgrounds\\3478a600-460d-4766-af67-f00642c5d3c0.png",
+      "PackagePath": "staticwebassets\\img\\backgrounds\\3478a600-460d-4766-af67-f00642c5d3c0.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\backgrounds\\b03b61ea-f981-4800-88e8-798fda905924.png",
+      "PackagePath": "staticwebassets\\img\\backgrounds\\b03b61ea-f981-4800-88e8-798fda905924.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\backgrounds\\b1b8a9db-b967-4163-b6c2-e69af2d8321c.png",
+      "PackagePath": "staticwebassets\\img\\backgrounds\\b1b8a9db-b967-4163-b6c2-e69af2d8321c.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\thumbnails\\8c0b5f20-cc3b-40d5-be6d-3d7e5c277980.png",
+      "PackagePath": "staticwebassets\\img\\thumbnails\\8c0b5f20-cc3b-40d5-be6d-3d7e5c277980.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\thumbnails\\d2f5f146-f31a-4ae5-8114-5cdb3ec40964.png",
+      "PackagePath": "staticwebassets\\img\\thumbnails\\d2f5f146-f31a-4ae5-8114-5cdb3ec40964.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\thumbnails\\d6f7775e-f73e-4e42-baf5-bf625170157d.png",
+      "PackagePath": "staticwebassets\\img\\thumbnails\\d6f7775e-f73e-4e42-baf5-bf625170157d.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MovieApp.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MovieApp.API.props",
+      "PackagePath": "build\\MovieApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MovieApp.API.props",
+      "PackagePath": "buildMultiTargeting\\MovieApp.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MovieApp.API.props",
+      "PackagePath": "buildTransitive\\MovieApp.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

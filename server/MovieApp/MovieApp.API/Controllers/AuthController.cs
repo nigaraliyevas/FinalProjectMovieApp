@@ -54,7 +54,7 @@ namespace MovieApp.API.Controllers
             await _userManager.AddToRoleAsync(appUser, "admin");
             return StatusCode(201);
         }
-        [HttpGet]
+        [HttpPost("Role")]
         public async Task<IActionResult> CreateRole()
         {
             if (await _roleManager.RoleExistsAsync("member")) return BadRequest();

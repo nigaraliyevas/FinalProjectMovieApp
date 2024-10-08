@@ -6,6 +6,11 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
     {
         public IMovieRepository movieRepository { get; }
         public ICommentRepository commentRepository { get; }
+        public IActorRepository actorRepository { get; }
+        public IGenreRepository genreRepository { get; }
+        public ICountryRepository countryRepository { get; }
+        public ITagRepository tagRepository { get; }
+        public IOriginalLanguageRepository originalLanguageRepository { get; }
         void Commit();
     }
 }

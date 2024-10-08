@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CG.Web.MegaApiClient;
+using Microsoft.AspNetCore.Http;
 using MovieApp.Application.Dtos.MovieDtos;
 using MovieApp.Application.Exceptions;
 using MovieApp.Application.Service.Interfaces;
@@ -65,6 +66,7 @@ namespace MovieApp.Application.Service.Implementations
         }
 
 
+
         public async Task<int> Delete(int id)
         {
             if (id <= 0) throw new CustomException(404, "Invalid ID");
@@ -95,7 +97,7 @@ namespace MovieApp.Application.Service.Implementations
             await _unitOfWork.movieRepository.Delete(movie);
             _unitOfWork.Commit();
 
-            await client.LogoutAsync(); // 
+            await client.LogoutAsync();
 
             return movie.Id;
         }
@@ -133,6 +135,26 @@ namespace MovieApp.Application.Service.Implementations
         public Task<int> Update(MovieUpdateDto movieUpdateDto)
         {
             throw new NotImplementedException();
+        }
+        private async Task<string> UploadFileToCloud(IFormFile file)
+        {
+            using var memoryStream = new MemoryStream();
+            await file.CopyToAsync(memoryStream);
+            byte[] fileBytes = memoryStream.ToArray();
+
+            MegaApiClient client = new MegaApiClient();
+            await client.LoginAsync("your-email@gmail.com", "your-password");
+
+            var nodes = await client.GetNodesAsync();
+            var parent = nodes.FirstOrDefault(n => n.Type == NodeType.Root);
+
+            string fileName = Path.GetFileName(file.FileName);
+            var node = await client.UploadAsync(new MemoryStream(fileBytes), fileName, parent);
+
+            string downloadLink = (await client.GetDownloadLinkAsync(node)).ToString();
+            await client.LogoutAsync();
+
+            return downloadLink;
         }
 
     }

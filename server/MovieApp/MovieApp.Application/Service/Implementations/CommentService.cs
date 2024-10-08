@@ -21,10 +21,10 @@ namespace MovieApp.Application.Service.Implementations
             _userManager = userManager;
         }
 
-        public Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public async Task<int> Create(CommentCreateDto commentCreateDto)
         {
@@ -40,7 +40,7 @@ namespace MovieApp.Application.Service.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<List<Movie>> GetAll()
+        public Task<List<Comment>> GetAll()
         {
             throw new NotImplementedException();
         }

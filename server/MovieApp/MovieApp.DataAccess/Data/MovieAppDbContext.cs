@@ -7,14 +7,10 @@ namespace MovieApp.DataAccess.Data
 {
     public class MovieAppDbContext : IdentityDbContext<AppUser>
     {
-        public MovieAppDbContext(DbContextOptions<MovieAppDbContext> options) : base(options)
+        public MovieAppDbContext(DbContextOptions options) : base(options)
         {
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            base.OnModelCreating(modelBuilder);
-        }
+
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Genre> Genres { get; set; }
@@ -27,6 +23,12 @@ namespace MovieApp.DataAccess.Data
         public DbSet<MovieSlider> Sliders { get; set; }
         public DbSet<MovieTag> MovieTags { get; set; }
         public DbSet<OriginalLanguage> OriginalLanguages { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }

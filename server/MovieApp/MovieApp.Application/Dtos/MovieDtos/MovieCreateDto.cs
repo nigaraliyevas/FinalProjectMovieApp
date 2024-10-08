@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using System.Text.Json.Serialization;
 
 namespace MovieApp.Application.Dtos.MovieDtos
@@ -17,13 +18,34 @@ namespace MovieApp.Application.Dtos.MovieDtos
         [JsonIgnore]
         public string MovieTrailerURL { get; set; }
 
-        //public int MovieSliderId { get; set; } // Assuming MovieSlider is an entity with an ID
-        //public List<int> ActorIds { get; set; } // Assuming MovieActor is associated via actor IDs
-        //public List<int> TagIds { get; set; } // Assuming MovieTag is associated via tag IDs
-        //public List<int> GenreIds { get; set; } // Assuming MovieGenre is associated via genre IDs
-        //public List<int> LanguageIds { get; set; } // Assuming OriginalLanguage is associated via language IDs
+
+        public IFormFile ThumbImgUpload { get; set; }
+        public IFormFile ThumbBgImgUpload { get; set; }
+        [JsonIgnore]
+        public string ThumbImg { get; set; }
+        [JsonIgnore]
+        public string ThumbBgImg { get; set; }
+
+        public bool IsFree { get; set; }
+
+        public List<int> ActorIds { get; set; } // Assuming MovieActor is associated via actor IDs
+        public List<int> TagIds { get; set; } // Assuming MovieTag is associated via tag IDs
+        public List<int> GenreIds { get; set; } // Assuming MovieGenre is associated via genre IDs
+        public List<int> CountryIds { get; set; } // Assuming MovieCountry is associated via country IDs
         //public List<int> CommentsIds { get; set; } // Assuming OriginalLanguage is associated via language IDs
-        //public List<int> CountryIds { get; set; } // Assuming MovieCountry is associated via country IDs
+    }
+    public class MovieCreateDtoValidator : AbstractValidator<MovieCreateDto>
+    {
+        public MovieCreateDtoValidator()
+        {
+            RuleFor(m => m).Custom((s, c) =>
+            {
+                if (s.IMDBRate <= 0)
+                    c.AddFailure(nameof(s.IMDBRate), "IMDBRate can't be negative or zero");
+                if (s.IMDBRate < 0 || s.IMDBRate > 10)
+                    c.AddFailure(nameof(s.IMDBRate), "IMDBRate has to be between 1-10");
+            });
+        }
     }
 }
 

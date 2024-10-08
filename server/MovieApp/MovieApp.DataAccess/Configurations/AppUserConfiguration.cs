@@ -4,7 +4,7 @@ using MovieApp.Core.Entities;
 
 namespace MovieApp.DataAccess.Configurations
 {
-    public class AppUserValidation : IEntityTypeConfiguration<AppUser>
+    public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)
         {

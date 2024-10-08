@@ -6,5 +6,7 @@ namespace MovieApp.Core.Entities
     {
         public string Name { get; set; }
         public int MovieId { get; set; }
+        public Movie Movie { get; set; }
+
     }
 }

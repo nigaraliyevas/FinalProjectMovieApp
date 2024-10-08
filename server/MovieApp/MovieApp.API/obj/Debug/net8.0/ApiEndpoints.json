@@ -1,5 +1,100 @@
 [
   {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "GetAll",
+    "RelativePath": "api/Actor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "Create",
+    "RelativePath": "api/Actor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actorCreateDto",
+        "Type": "MovieApp.Application.Dtos.ActorDtos.ActorCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "Update",
+    "RelativePath": "api/Actor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "actorUpdateDto",
+        "Type": "MovieApp.Application.Dtos.ActorDtos.ActorUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "Delete",
+    "RelativePath": "api/Actor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "Get",
+    "RelativePath": "api/Actor/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.ActorController",
+    "Method": "GetAllByMovieId",
+    "RelativePath": "api/Actor/movieId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieApp.API.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth",
@@ -13,16 +108,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MovieApp.API.Controllers.AuthController",
-    "Method": "CreateRole",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -52,6 +137,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MovieApp.API.Controllers.AuthController",
+    "Method": "CreateRole",
+    "RelativePath": "api/Auth/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MovieApp.API.Controllers.CommentController",
     "Method": "Create",
     "RelativePath": "api/Comment",
@@ -63,6 +158,164 @@
         "Name": "commentCreateDto",
         "Type": "MovieApp.Application.Dtos.CommentDtos.CommentCreateDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.CountryController",
+    "Method": "GetAll",
+    "RelativePath": "api/Country",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.CountryController",
+    "Method": "Create",
+    "RelativePath": "api/Country",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countryCreateDto",
+        "Type": "MovieApp.Application.Dtos.CountryDtos.CountryCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.CountryController",
+    "Method": "Update",
+    "RelativePath": "api/Country",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "countryUpdateDto",
+        "Type": "MovieApp.Application.Dtos.CountryDtos.CountryUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.CountryController",
+    "Method": "Delete",
+    "RelativePath": "api/Country/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.CountryController",
+    "Method": "Get",
+    "RelativePath": "api/Country/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.GenreController",
+    "Method": "GetAll",
+    "RelativePath": "api/Genre",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.GenreController",
+    "Method": "Create",
+    "RelativePath": "api/Genre",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "genreCreateDto",
+        "Type": "MovieApp.Application.Dtos.GenreDtos.GenreCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.GenreController",
+    "Method": "Update",
+    "RelativePath": "api/Genre",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "genreUpdateDto",
+        "Type": "MovieApp.Application.Dtos.GenreDtos.GenreUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.GenreController",
+    "Method": "Delete",
+    "RelativePath": "api/Genre/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.GenreController",
+    "Method": "Get",
+    "RelativePath": "api/Genre/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -129,6 +382,51 @@
         "Name": "MovieTrailerURL",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "ThumbImgUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbBgImgUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbImg",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbBgImg",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsFree",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "ActorIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TagIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GenreIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CountryIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -142,9 +440,19 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "movieUpdateDto",
-        "Type": "MovieApp.Application.Dtos.MovieDtos.MovieUpdateDto",
-        "IsRequired": true
+        "Name": "ThumbImgUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbBgImgUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsFree",
+        "Type": "System.Boolean",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -209,6 +517,164 @@
         "Name": "name",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.OriginalLanguageController",
+    "Method": "GetAll",
+    "RelativePath": "api/OriginalLanguage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.OriginalLanguageController",
+    "Method": "Create",
+    "RelativePath": "api/OriginalLanguage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "originalLanguageCreateDto",
+        "Type": "MovieApp.Application.Dtos.OriginalLanguageDtos.OriginalLanguageCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.OriginalLanguageController",
+    "Method": "Update",
+    "RelativePath": "api/OriginalLanguage",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "originalLanguageUpdateDto",
+        "Type": "MovieApp.Application.Dtos.OriginalLanguageDtos.OriginalLanguageUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.OriginalLanguageController",
+    "Method": "Delete",
+    "RelativePath": "api/OriginalLanguage/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.OriginalLanguageController",
+    "Method": "Get",
+    "RelativePath": "api/OriginalLanguage/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.TagController",
+    "Method": "GetAll",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.TagController",
+    "Method": "Create",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagCreateDto",
+        "Type": "MovieApp.Application.Dtos.TagDtos.TagCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.TagController",
+    "Method": "Update",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagUpdateDto",
+        "Type": "MovieApp.Application.Dtos.TagDtos.TagUpdateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.TagController",
+    "Method": "Delete",
+    "RelativePath": "api/Tag/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApp.API.Controllers.TagController",
+    "Method": "Get",
+    "RelativePath": "api/Tag/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
