@@ -4,13 +4,23 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        public IMovieRepository movieRepository { get; }
-        public ICommentRepository commentRepository { get; }
-        public IActorRepository actorRepository { get; }
-        public IGenreRepository genreRepository { get; }
-        public ICountryRepository countryRepository { get; }
-        public ITagRepository tagRepository { get; }
-        public IOriginalLanguageRepository originalLanguageRepository { get; }
-        void Commit();
+        public IMovieRepository MovieRepository { get; }
+        public ICommentRepository CommentRepository { get; }
+        public IActorRepository ActorRepository { get; }
+        public IGenreRepository GenreRepository { get; }
+        public ICountryRepository CountryRepository { get; }
+        public ITagRepository TagRepository { get; }
+        public IOriginalLanguageRepository OriginalLanguageRepository { get; }
+        public IMovieActorRepository MovieActorRepository { get; }
+        public IMovieTagRepository MovieTagRepository { get; }
+        public IMovieCountryRepository MovieCountryRepository { get; }
+        public IMovieGenreRepository MovieGenreRepository { get; }
+        public ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
+        public IPlanRoleNameRepository PlanRoleNameRepository { get; }
+        public IWatchedMovieRepository WatchedMovieRepository { get; }
+        public IMovieSliderRepository MovieSliderRepository { get; }
+
+
+        public void Commit();
     }
 }

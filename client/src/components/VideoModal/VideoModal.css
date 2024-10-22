@@ -6,5 +6,11 @@
 body.modal-open {
   overflow: hidden;
 }
-
+.show,
+.modal-backdrop {
+  margin-top: 0 !important;
+}
+#youtube-iframe {
+  vertical-align: bottom;
+}
 /* modal ends */

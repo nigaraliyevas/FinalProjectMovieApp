@@ -18,10 +18,10 @@ const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/show" element={<ShowPage />} />
-        <Route path="/detail" element={<DetailPage />} />
-        <Route path="/movie" element={<MoviePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/tvshows" element={<TvShowsPage />} />
+        {/* <Route path="/movie/:id" element={<DetailPage />} /> */}
+        <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/Movie" element={<MoviesPage />} />
+        <Route path="/free-movies" element={<TvShowsPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recover" element={<RecoverPasswordPage />} />

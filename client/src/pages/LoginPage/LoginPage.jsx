@@ -1,4 +1,4 @@
-import FormBox from "../../components/FormBox/FormBox";
+import FormBox from "../../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
   return (

@@ -9,7 +9,6 @@ namespace MovieApp.Application.Service.Interfaces
         Task<int> Update(CountryUpdateDto genreUpdateDto, int id);
         Task<int> Delete(int id);
         Task<List<Country>> GetAll();
-        //Task<List<Genre>> GetAllByMovieId(int id);
         Task<Country> GetById(int id);
     }
 }

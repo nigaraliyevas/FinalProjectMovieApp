@@ -9,7 +9,6 @@ namespace MovieApp.Application.Service.Interfaces
         Task<int> Update(OriginalLanguageUpdateDto originalLanguageUpdateDto, int id);
         Task<int> Delete(int id);
         Task<List<OriginalLanguage>> GetAll();
-        //Task<List<Genre>> GetAllByMovieId(int id);
         Task<OriginalLanguage> GetById(int id);
     }
 }

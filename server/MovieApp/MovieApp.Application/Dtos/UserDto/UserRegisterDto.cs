@@ -1,4 +1,4 @@
-﻿namespace Api_EntityConfiguration_Validator_Dtos.Apps.AdminApp.Dtos.UserDto
+﻿namespace MovieApp.Application.Dtos.UserDto
 {
     public class UserRegisterDto
     {
@@ -7,5 +7,7 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public string RePassword { get; set; }
+        public string? Image { get; set; }
+        public int SubscriptionPlanId { get; set; }
     }
 }

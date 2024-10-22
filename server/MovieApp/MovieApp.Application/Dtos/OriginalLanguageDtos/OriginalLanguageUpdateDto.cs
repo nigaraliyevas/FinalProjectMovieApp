@@ -3,7 +3,6 @@
     public class OriginalLanguageUpdateDto
     {
         public string Name { get; set; }
-        public int MovieId { get; set; }
 
     }
 }

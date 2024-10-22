@@ -23,7 +23,9 @@ namespace MovieApp.DataAccess.Data
         public DbSet<MovieSlider> Sliders { get; set; }
         public DbSet<MovieTag> MovieTags { get; set; }
         public DbSet<OriginalLanguage> OriginalLanguages { get; set; }
-
+        public DbSet<PlanRoleName> PlanRoleNames { get; set; }
+        public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
+        public DbSet<WatchedMovie> WatchedMovies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

@@ -4,8 +4,8 @@ import MoviesAndFilter from "../../components/MoviesAndFilter/MoviesAndFilter";
 const MoviesPage = () => {
   return (
     <>
-      <BreadCrumb location="Tv Shows" />
-      <MoviesAndFilter />
+      <BreadCrumb location="Free Movies" />
+      <MoviesAndFilter location="Free Movies" />
     </>
   );
 };

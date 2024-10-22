@@ -6,7 +6,7 @@ namespace MovieApp.Core.Entities
     {
         public string Name { get; set; }
         public int ViewCount { get; set; }
-        public DateTime Duration { get; set; }
+        public TimeSpan Duration { get; set; }
         public string Summary { get; set; }
         public DateTime ReleasedDate { get; set; }
         public byte IMDBRate { get; set; }
@@ -16,9 +16,11 @@ namespace MovieApp.Core.Entities
         public string ThumbImg { get; set; }
         public string ThumbBgImg { get; set; }
         public bool IsFree { get; set; } = false;
+        public int OriginalLanguageId { get; set; }//one to many
+        public virtual OriginalLanguage OriginalLanguage { get; set; }
+
         //
-        public MovieSlider MovieSlider { get; set; }
-        public OriginalLanguage OriginalLanguage { get; set; }//one to one
+        public MovieSlider MovieSlider { get; set; }//one to one
 
         public List<MovieActor> MovieActors { get; set; }
 
@@ -29,6 +31,8 @@ namespace MovieApp.Core.Entities
         public List<Comment> Comments { get; set; } //one to many
 
         public List<MovieCountry> MovieCountries { get; set; }
+        public List<WatchedMovie> WatchedByUsers { get; set; } = new List<WatchedMovie>();
+
 
 
     }

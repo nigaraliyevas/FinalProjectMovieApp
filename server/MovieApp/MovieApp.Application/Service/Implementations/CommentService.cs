@@ -21,38 +21,54 @@ namespace MovieApp.Application.Service.Implementations
             _userManager = userManager;
         }
 
-        //public Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto)
+        //public Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto) //todo
         //{
         //    throw new NotImplementedException();
         //}
 
-        public async Task<int> Create(CommentCreateDto commentCreateDto)
+        public async Task<CommentDto> Create(CommentCreateDto commentCreateDto)
         {
             if (commentCreateDto == null) throw new CustomException(404, "Null Exception");
+            var user = await _userManager.FindByIdAsync(commentCreateDto.AppUserId);
+            if (user == null) throw new CustomException(404, "Not Found");
             var newComment = _mapper.Map<Comment>(commentCreateDto);
-            await _unitOfWork.commentRepository.Create(newComment);
+            await _unitOfWork.CommentRepository.Create(newComment);
             _unitOfWork.Commit();
-            return newComment.Id;
+            return _mapper.Map<CommentDto>(newComment);
         }
 
-        public Task<int> Delete(int id)
+        public async Task<int> Delete(int id)
         {
-            throw new NotImplementedException();
+            if (id == null || id <= 0) throw new CustomException(404, "Null Exception");
+            var existComment = await _unitOfWork.CommentRepository.GetEntity(x => x.Id == id);
+            if (existComment == null) throw new CustomException(404, "Not Found");
+            await _unitOfWork.CommentRepository.Delete(existComment);
+            _unitOfWork.Commit();
+            return existComment.Id;
         }
 
-        public Task<List<Comment>> GetAll()
+        public async Task<List<Comment>> GetAll()
         {
-            throw new NotImplementedException();
+            var comments = await _unitOfWork.CommentRepository.GetAll(null, "AppUser");
+            if (comments == null) throw new CustomException(404, "Null Exception");
+            return comments;
         }
 
-        public Task<Comment> GetById(int id)
+        public async Task<Comment> GetById(int id)
         {
-            throw new NotImplementedException();
+            if (id == null || id <= 0) throw new CustomException(404, "Null Exception");
+            var existComment = await _unitOfWork.CommentRepository.GetEntity(x => x.Id == id, "AppUser");
+            if (existComment == null) throw new CustomException(404, "Not Found");
+            return existComment;
         }
 
-        public Task<int> Update(CommentUpdateDto commentUpdateDto)
+        public async Task<int> Update(CommentUpdateDto commentUpdateDto, int id)
         {
-            throw new NotImplementedException();
+            if (id == null || id <= 0 || commentUpdateDto == null) throw new CustomException(404, "Null Exception");
+            var existComment = await _unitOfWork.CommentRepository.GetEntity(x => x.Id == id, "AppUser");
+            if (existComment == null) throw new CustomException(404, "Not Found");
+            _mapper.Map<Comment>(commentUpdateDto);
+            return existComment.Id;
         }
     }
 }

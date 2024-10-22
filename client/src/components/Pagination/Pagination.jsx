@@ -6,15 +6,12 @@ import "./Pagination.css";
 import { useState } from "react";
 
 const Pagination = () => {
-  // Get current page and total pages from Redux state
   const currentPage = useSelector(state => state.pagination.currentPage);
   const totalPages = useSelector(state => state.pagination.totalPages);
   const dispatch = useDispatch();
 
-  // Local state for managing active class
   const [activePage, setActivePage] = useState(currentPage);
 
-  // Go to next page
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       dispatch(setPage(currentPage + 1));
@@ -22,7 +19,6 @@ const Pagination = () => {
     }
   };
 
-  // Go to previous page
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       dispatch(setPage(currentPage - 1));
@@ -35,7 +31,6 @@ const Pagination = () => {
     setActivePage(page);
   };
 
-  // Render pagination buttons
   const renderPageNumbers = () => {
     const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {

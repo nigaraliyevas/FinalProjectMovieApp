@@ -14,33 +14,48 @@ public class MovieController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public IActionResult GetAll(string? search, int pageSize = 15, int page = 1)
     {
-        return Ok(await _movieService.GetAll());
+        return Ok(_movieService.GetAll(search, pageSize, page));
     }
 
-    [HttpGet("name/{name}")]
-    public async Task<IActionResult> GetAllByName(string name)
+    [HttpGet("name")]
+    public IActionResult GetAllByName(string name, int pageSize = 15, int page = 1)
     {
-        return Ok(await _movieService.GetAllByName(name));
+        return Ok(_movieService.GetAllByName(name, pageSize, page));
     }
-
-    [HttpGet("id/{id}")]
+    //[Authorize]
+    [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
         return Ok(await _movieService.GetById(id));
     }
 
-    [HttpGet("genre/{genre}")]
-    public async Task<IActionResult> GetAllByGenre(string genre)
+    [HttpGet("genre")]
+    public IActionResult GetAllByGenre(string name, int pageSize = 15, int page = 1)
     {
-        return Ok(await _movieService.GetAllByGenre(genre));
+        return Ok(_movieService.GetAllByGenre(name, pageSize, page));
+    }
+    [HttpGet("year")]
+    public IActionResult GetAllByYear(int year, int pageSize = 15, int page = 1)
+    {
+        return Ok(_movieService.GetAllByYear(year, pageSize, page));
+    }
+    [HttpGet("free")]
+    public IActionResult GetAllFree(int pageSize = 15, int page = 1)
+    {
+        return Ok(_movieService.GetAllFree(pageSize, page));
     }
 
     [HttpPost]
     public async Task<IActionResult> Create(MovieCreateDto movieCreateDto)
     {
         return Ok(await _movieService.Create(movieCreateDto));
+    }
+    [HttpGet("filter")]
+    public IActionResult Filter(int? year, string? genre, string? language, int page = 1, int pageSize = 10)
+    {
+        return Ok(_movieService.Filter(year, genre, language, page, pageSize));
     }
 
     [HttpPut]

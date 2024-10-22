@@ -1,6 +1,6 @@
-using AcademyApp.API.Middlewares;
 using Microsoft.EntityFrameworkCore;
 using MovieApp.API;
+using MovieApp.API.Middlewares.ExceptionMiddleware;
 using MovieApp.DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +23,7 @@ builder.Services.AddDbContext<MovieAppDbContext>(options =>
 
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
 
 app.UseStaticFiles();
 // Configure the HTTP request pipeline.
@@ -34,7 +35,6 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseMiddleware<ExceptionMiddleware>();
-//app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 

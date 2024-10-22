@@ -6,7 +6,7 @@
 }
 .column-top__img {
   width: 100% !important;
-  height: 39%;
+  /* height: 39%; */
   position: relative;
   color: white;
 }

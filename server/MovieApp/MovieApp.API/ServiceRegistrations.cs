@@ -1,20 +1,22 @@
-﻿using Api_EntityConfiguration_Validator_Dtos.Settings;
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using MovieApp.Application.Dtos.MovieDtos;
 using MovieApp.Application.Profiles;
 using MovieApp.Application.Service.Implementations;
 using MovieApp.Application.Service.Interfaces;
+using MovieApp.Application.Settings;
 using MovieApp.Core.Entities;
 using MovieApp.Core.Repositories;
 using MovieApp.DataAccess.Data;
 using MovieApp.DataAccess.Implementations;
 using MovieApp.DataAccess.Implementations.UnitOfWork;
+using Newtonsoft.Json;
 using System.Text;
 
 namespace MovieApp.API
@@ -24,6 +26,11 @@ namespace MovieApp.API
         public static void Register(this IServiceCollection services, IConfiguration config)
         {
             services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
+                })
             .ConfigureApiBehaviorOptions(opt =>
             {
                 opt.InvalidModelStateResponseFactory = context =>
@@ -61,8 +68,36 @@ namespace MovieApp.API
             services.AddScoped<IOriginalLanguageService, OriginalLanguageService>();
             services.AddScoped<IOriginalLanguageRepository, OriginalLanguageRepository>();
 
+            services.AddScoped<IPlanRoleNameService, PlanRoleNameService>();
+            services.AddScoped<IPlanRoleNameRepository, PlanRoleNameRepository>();
+
+            services.AddScoped<ISubscriptionPlanService, SubscriptionPlanService>();
+            services.AddScoped<ISubscriptionPlanRepository, SubscriptionPlanRepository>();
+
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+            services.AddScoped<IWatchedMovieService, WatchedMovieService>();
+            services.AddScoped<IWatchedMovieRepository, WatchedMovieRepository>();
+
+            services.AddScoped<IMovieSliderService, MovieSliderService>();
+            services.AddScoped<IMovieSliderRepository, MovieSliderRepository>();
+
+
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<ICommentRepository, CommentRepository>();
+
+
+            services.AddScoped<IMovieActorRepository, MovieActorRepository>();
+
+            services.AddScoped<IMovieGenreRepository, MovieGenreRepository>();
+
+            services.AddScoped<IMovieCountryRepository, MovieCountryRepository>();
+
+            services.AddScoped<IMovieTagRepository, MovieTagRepository>();
+
+
+            //services.AddScoped<IPaymentService, StripePaymentService>(); // Replace FakePaymentService with StripePaymentService
+
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -101,7 +136,45 @@ namespace MovieApp.API
                 };
             });
 
-            //services.AddScoped<ICategoryService, CategoryService>();
+            //Jwt Bearer send in UI
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter token",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "bearer"
+                });
+
+                opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                 });
+            });
+
+            //CORS Policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:5173")
+                                        .WithOrigins("http://localhost:3000/")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod());
+            });
         }
     }
 }

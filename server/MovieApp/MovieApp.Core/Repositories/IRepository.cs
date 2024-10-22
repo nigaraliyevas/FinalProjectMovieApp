@@ -10,6 +10,7 @@ namespace MovieApp.Core.Repositories
         Task Create(T entity);
         Task Update(T entity);
         Task Delete(T entity);
+        IQueryable<T> GetAllAsQeuryable(Expression<Func<T, bool>> predicate = null, params string[] includes);
         Task<bool> IsExist(Expression<Func<T, bool>> predicate = null);
         Task Commit();
     }

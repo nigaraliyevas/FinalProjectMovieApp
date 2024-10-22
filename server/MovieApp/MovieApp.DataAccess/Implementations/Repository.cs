@@ -108,7 +108,6 @@ namespace MovieApp.DataAccess.Implementations
 
             }
         }
-
         public async Task Update(T entity)
         {
             try
@@ -138,6 +137,34 @@ namespace MovieApp.DataAccess.Implementations
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        public IQueryable<T> GetAllAsQeuryable(Expression<Func<T, bool>> predicate = null, params string[] includes)
+        {
+            try
+            {
+                IQueryable<T> query = _table;
+
+
+                if (includes.Length > 0)
+                {
+                    query = GetAllIncludes(includes);
+
+                }
+
+                if (predicate != null)
+                {
+                    query = query.Where(predicate);
+                }
+
+                return query;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 

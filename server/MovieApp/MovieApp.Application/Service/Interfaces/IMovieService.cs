@@ -1,5 +1,4 @@
 ﻿using MovieApp.Application.Dtos.MovieDtos;
-using MovieApp.Core.Entities;
 
 namespace MovieApp.Application.Service.Interfaces
 {
@@ -8,9 +7,12 @@ namespace MovieApp.Application.Service.Interfaces
         Task<int> Create(MovieCreateDto movieCreateDto);
         Task<int> Update(MovieUpdateDto movieUpdateDto);
         Task<int> Delete(int id);
-        Task<List<Movie>> GetAll();
-        Task<List<Movie>> GetAllByName(string name);
-        Task<List<Movie>> GetAllByGenre(string name);
-        Task<Movie> GetById(int id);
+        MovieListDto GetAllByName(string name, int pageSize, int page);
+        MovieListDto GetAll(string? search, int pageSize, int page);
+        MovieListDto GetAllByGenre(string name, int pageSize, int page);
+        MovieListDto GetAllByYear(int year, int pageSize, int page);
+        MovieListDto GetAllFree(int pageSize, int page);
+        MovieListDto Filter(int? year, string? genre, string? language, int page, int pageSize);
+        Task<MovieReturnDto> GetById(int id);
     }
 }

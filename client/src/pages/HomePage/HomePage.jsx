@@ -7,10 +7,10 @@ const HomePage = () => {
   return (
     <>
       <Slider />
-      <MoviesSlider />
-      <MoviesSlider />
+      <MoviesSlider isFree={true} init={0} end={8} />
+      <MoviesSlider isFree={true} init={8} end={16}/>
       <MovieSwiper />
-      <MoviesSlider />
+      <MoviesSlider isFree={true} init={16} end={24}/>
     </>
   );
 };

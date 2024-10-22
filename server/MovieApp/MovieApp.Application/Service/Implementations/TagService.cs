@@ -21,10 +21,10 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<int> Create(TagCreateDto tagCreateDto)
         {
             if (tagCreateDto == null) throw new CustomException(404, "Null Exception");
-            var isExist = await _unitOfWork.tagRepository.IsExist(x => x.Name.ToLower() == tagCreateDto.Name.ToLower());
+            var isExist = await _unitOfWork.TagRepository.IsExist(x => x.Name.ToLower() == tagCreateDto.Name.ToLower());
             if (isExist) throw new CustomException(400, "The Tag is exist");
             var newCountry = _mapper.Map<Tag>(tagCreateDto);
-            await _unitOfWork.tagRepository.Create(newCountry);
+            await _unitOfWork.TagRepository.Create(newCountry);
             _unitOfWork.Commit();
             return newCountry.Id;
         }
@@ -32,16 +32,16 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<int> Delete(int id)
         {
             if (id <= 0 || id == null) throw new CustomException(404, "Null Exception");
-            var Country = await _unitOfWork.tagRepository.GetEntity(x => x.Id == id);
+            var Country = await _unitOfWork.TagRepository.GetEntity(x => x.Id == id);
             if (Country == null) throw new CustomException(404, "Not Found");
-            await _unitOfWork.tagRepository.Delete(Country);
+            await _unitOfWork.TagRepository.Delete(Country);
             _unitOfWork.Commit();
             return Country.Id;
         }
 
         public async Task<List<Tag>> GetAll()
         {
-            var countries = await _unitOfWork.tagRepository.GetAll();
+            var countries = await _unitOfWork.TagRepository.GetAll();
             if (countries == null) throw new CustomException(404, "Not Found");
             return countries;
         }
@@ -49,7 +49,7 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<Tag> GetById(int id)
         {
             if (id <= 0 || id == null) throw new CustomException(404, "Null Exception");
-            var country = await _unitOfWork.tagRepository.GetEntity(x => x.Id == id);
+            var country = await _unitOfWork.TagRepository.GetEntity(x => x.Id == id);
             if (country == null) throw new CustomException(404, "Not Found");
             return country;
         }
@@ -57,11 +57,11 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<int> Update(TagUpdateDto tagUpdateDto, int id)
         {
             if (tagUpdateDto == null || id <= 0) throw new CustomException(404, "Null Exception");
-            var existCountry = await _unitOfWork.tagRepository.GetEntity(x => x.Id == id && !(x.Name.ToLower() == tagUpdateDto.Name));
+            var existCountry = await _unitOfWork.TagRepository.GetEntity(x => x.Id == id && !(x.Name.ToLower() == tagUpdateDto.Name));
             if (existCountry == null) throw new CustomException(404, "Not Found");
             existCountry.Name = tagUpdateDto.Name;
             existCountry.UpdatedDate = DateTime.Now;
-            await _unitOfWork.tagRepository.Update(existCountry);
+            await _unitOfWork.TagRepository.Update(existCountry);
             _unitOfWork.Commit();
             return existCountry.Id;
         }

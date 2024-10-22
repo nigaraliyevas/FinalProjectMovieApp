@@ -1,13 +1,13 @@
 /* all-time section */
 .all-time .swiper-button-next::after {
-  font-size: 1.5rem; /* Adjust the size as needed */
-  width: 30px; /* Adjust width if necessary */
-  height: 30px; /* Adjust height if necessary */
+  font-size: 1.5rem; 
+  width: 30px; 
+  height: 30px; 
 }
 .all-time .swiper-button-prev::after {
-  font-size: 1.5rem; /* Adjust the size as needed */
-  width: 30px; /* Adjust width if necessary */
-  height: 30px; /* Adjust height if necessary */
+  font-size: 1.5rem; 
+  width: 30px; 
+  height: 30px; 
 }
 .all-time .swiper-button-prev {
   top: 40%;

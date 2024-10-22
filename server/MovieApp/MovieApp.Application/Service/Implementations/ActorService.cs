@@ -22,7 +22,7 @@ namespace MovieApp.Application.Service.Implementations
         {
             if (actorCreateDto == null) throw new CustomException(404, "Null Exception");
             var newActor = _mapper.Map<Actor>(actorCreateDto);
-            await _unitOfWork.actorRepository.Create(newActor);
+            await _unitOfWork.ActorRepository.Create(newActor);
             _unitOfWork.Commit();
             return newActor.Id;
         }
@@ -30,16 +30,16 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<int> Delete(int id)
         {
             if (id <= 0 || id == null) throw new CustomException(404, "Null Exception");
-            var actor = await _unitOfWork.actorRepository.GetEntity(x => x.Id == id);
+            var actor = await _unitOfWork.ActorRepository.GetEntity(x => x.Id == id);
             if (actor == null) throw new CustomException(404, "Not Found");
-            await _unitOfWork.actorRepository.Delete(actor);
+            await _unitOfWork.ActorRepository.Delete(actor);
             _unitOfWork.Commit();
             return actor.Id;
         }
 
         public async Task<List<Actor>> GetAll()
         {
-            var actors = await _unitOfWork.actorRepository.GetAll();
+            var actors = await _unitOfWork.ActorRepository.GetAll();
             if (actors == null) throw new CustomException(404, "Not Found");
             return actors;
         }
@@ -47,7 +47,7 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<List<Actor>> GetAllByMovieId(int id)
         {
             if (id <= 0 || id == null) throw new CustomException(404, "Null Exception");
-            var actors = await _unitOfWork.actorRepository.GetAll(x => x.MovieActors.Any(ma => ma.MovieId == id), "MovieActors");
+            var actors = await _unitOfWork.ActorRepository.GetAll(x => x.MovieActors.Any(ma => ma.MovieId == id), "MovieActors");
             if (actors == null) throw new CustomException(404, "Not Found");
             var actorDtos = actors.Select(a => new Actor
             {
@@ -60,7 +60,7 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<Actor> GetById(int id)
         {
             if (id <= 0 || id == null) throw new CustomException(404, "Null Exception");
-            var actor = await _unitOfWork.actorRepository.GetEntity(x => x.Id == id);
+            var actor = await _unitOfWork.ActorRepository.GetEntity(x => x.Id == id);
             if (actor == null) throw new CustomException(404, "Not Found");
             return actor;
         }
@@ -68,11 +68,11 @@ namespace MovieApp.Application.Service.Implementations
         public async Task<int> Update(ActorUpdateDto actorUpdateDto, int id)
         {
             if (actorUpdateDto == null) throw new CustomException(404, "Null Exception");
-            var existActor = await _unitOfWork.actorRepository.GetEntity(x => x.Id == id);
+            var existActor = await _unitOfWork.ActorRepository.GetEntity(x => x.Id == id);
             if (existActor == null) throw new CustomException(404, "Not Found");
             existActor.FullName = actorUpdateDto.FullName;
             existActor.UpdatedDate = DateTime.Now;
-            await _unitOfWork.actorRepository.Update(existActor);
+            await _unitOfWork.ActorRepository.Update(existActor);
             _unitOfWork.Commit();
             return existActor.Id;
         }

@@ -6,26 +6,42 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly MovieAppDbContext _context;
-        public IMovieRepository movieRepository { get; private set; }
+        public IMovieRepository MovieRepository { get; private set; }
+        public ICommentRepository CommentRepository { get; private set; }
 
-        public ICommentRepository commentRepository { get; private set; }
+        public IActorRepository ActorRepository { get; private set; }
+        public IGenreRepository GenreRepository { get; private set; }
+        public ICountryRepository CountryRepository { get; private set; }
+        public ITagRepository TagRepository { get; private set; }
+        public IOriginalLanguageRepository OriginalLanguageRepository { get; private set; }
+        public IMovieActorRepository MovieActorRepository { get; private set; }
+        public IMovieTagRepository MovieTagRepository { get; private set; }
+        public IMovieCountryRepository MovieCountryRepository { get; private set; }
+        public IMovieGenreRepository MovieGenreRepository { get; private set; }
+        public ISubscriptionPlanRepository SubscriptionPlanRepository { get; private set; }
+        public IPlanRoleNameRepository PlanRoleNameRepository { get; private set; }
+        public IWatchedMovieRepository WatchedMovieRepository { get; private set; }
+        public IMovieSliderRepository MovieSliderRepository { get; private set; }
 
-        public IActorRepository actorRepository { get; private set; }
-        public IGenreRepository genreRepository { get; private set; }
-        public ICountryRepository countryRepository { get; private set; }
-        public ITagRepository tagRepository { get; private set; }
-        public IOriginalLanguageRepository originalLanguageRepository { get; private set; }
 
-        public UnitOfWork(MovieAppDbContext context)
+        public UnitOfWork(MovieAppDbContext context, IMovieRepository movieRepository, ICommentRepository commentRepository, IActorRepository actorRepository, IGenreRepository genreRepository, ICountryRepository countryRepository, ITagRepository tagRepository, IOriginalLanguageRepository originalLanguageRepository, IMovieActorRepository movieActorRepository, IMovieTagRepository movieTagRepository, IMovieCountryRepository movieCountryRepository, IMovieGenreRepository movieGenreRepository, ISubscriptionPlanRepository subscriptionPlanRepository, IPlanRoleNameRepository planRoleNameRepository, IWatchedMovieRepository watchedMovieRepository, IMovieSliderRepository movieSliderRepository)
         {
             _context = context;
-            movieRepository = new MovieRepository(_context);
-            commentRepository = new CommentRepository(_context);
-            actorRepository = new ActorRepository(_context);
-            genreRepository = new GenreRepository(_context);
-            countryRepository = new CountryRepository(_context);
-            tagRepository = new TagRepository(_context);
-            originalLanguageRepository = new OriginalLanguageRepository(_context);
+            MovieRepository = movieRepository;
+            CommentRepository = commentRepository;
+            ActorRepository = actorRepository;
+            GenreRepository = genreRepository;
+            CountryRepository = countryRepository;
+            TagRepository = tagRepository;
+            OriginalLanguageRepository = originalLanguageRepository;
+            MovieActorRepository = movieActorRepository;
+            MovieTagRepository = movieTagRepository;
+            MovieCountryRepository = movieCountryRepository;
+            MovieGenreRepository = movieGenreRepository;
+            SubscriptionPlanRepository = subscriptionPlanRepository;
+            PlanRoleNameRepository = planRoleNameRepository;
+            WatchedMovieRepository = watchedMovieRepository;
+            MovieSliderRepository = movieSliderRepository;
         }
 
         public void Commit()
@@ -35,7 +51,7 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }

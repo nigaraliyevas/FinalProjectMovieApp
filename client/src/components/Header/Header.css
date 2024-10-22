@@ -43,6 +43,12 @@
   background-color: var(--blue-color);
   padding: 10px 22px;
   border-radius: 3px;
+  outline: none;
+  border: none;
+  color: white;
+}
+.login-btn {
+  padding: 6.9px 20px;
 }
 .navbar-items__list-area .navbar-items__list li a {
   font-size: 18px;
@@ -50,7 +56,9 @@
 .burger-menu-icon {
   display: none;
 }
-
+.username {
+  font-size: 20px;
+}
 @media (max-width: 992px) {
   .navbar-items__middle {
     display: none;

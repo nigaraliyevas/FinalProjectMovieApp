@@ -12,8 +12,8 @@ const VideoModal = () => {
 
   const handleClose = () => {
     dispatch(closeModal());
-    
   };
+  const movie1 = videoUrl.split("/file/")[1];
 
   const resetVideo = () => {
     const iframe = document.getElementById("youtube-iframe");
@@ -28,7 +28,9 @@ const VideoModal = () => {
     <Modal show={showModal} onHide={handleClose} onExited={resetVideo} centered size="lg">
       <Modal.Body className="p-0 overflow-hidden">
         <div className="embed-responsive embed-responsive-16by9">
-          <iframe id="youtube-iframe" width="100%" height="500" src={videoUrl} allow="encrypted-media" allowFullScreen title="YouTube Trailer"></iframe>
+          <div className="min-vh-100 d-flex align-items-center">
+            <iframe id="youtube-iframe" width="100%" height="500" src={`https://mega.nz/embed/${movie1}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="YouTube video player"></iframe>
+          </div>
         </div>
       </Modal.Body>
     </Modal>

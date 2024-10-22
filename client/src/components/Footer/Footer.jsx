@@ -44,25 +44,10 @@ const Footer = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="#">TV Shows</Link>
+                <Link to="/Movie">Movies</Link>
               </li>
               <li>
-                <Link to="#">Actors</Link>
-              </li>
-              <li>
-                <Link to="#">Celebrity</Link>
-              </li>
-              <li>
-                <Link to="#">Movies</Link>
-              </li>
-              <li>
-                <Link to="#">Videos</Link>
-              </li>
-              <li>
-                <Link to="#">Basketball</Link>
-              </li>
-              <li>
-                <Link to="#">Cross</Link>
+                <Link to="/free-movies">Free Movies</Link>
               </li>
             </ul>
           </div>
@@ -70,28 +55,13 @@ const Footer = () => {
             <h5 className="footer-title">Company</h5>
             <ul className="footer-list">
               <li>
-                <Link to="#">Company</Link>
-              </li>
-              <li>
                 <Link to="#">Terms Of Use</Link>
               </li>
               <li>
                 <Link to="#">Contact Us</Link>
               </li>
               <li>
-                <Link to="#">Our Team</Link>
-              </li>
-              <li>
-                <Link to="#">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="#">Help Center</Link>
-              </li>
-              <li>
-                <Link to="#">Subscribe</Link>
-              </li>
-              <li>
-                <Link to="#">FAQ</Link>
+                <Link to="/pricing-plan">Subscribe</Link>
               </li>
             </ul>
           </div>

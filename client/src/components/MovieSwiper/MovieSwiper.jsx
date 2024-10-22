@@ -4,52 +4,15 @@ import { Link } from "react-router-dom";
 import "/node_modules/swiper/swiper-bundle.min.css";
 import "/node_modules/swiper/swiper.min.css";
 import "./MovieSwiper.css";
+import { useListMoviesQuery } from "../../features/movies/moviesApi";
 const MovieSwiper = () => {
-  const sliderData = [
-    {
-      id: 1,
-      background: "./public/assets/img/slider/slider1.jpg",
-      title: "Thrive the Bank",
-      rating: 9.5,
-      year: 2018,
-      genre: "Action",
-      duration: "30min",
-      cast: "Miley Cyrus, Dwayne Johnson",
-      tags: "brother, childhood, old",
-      description: "Streamlab is a long established fact that a reader will be distracted by the readable content of a page...",
-      imdb: "./public/assets/img/slider/imdb.png",
-      video: "https://www.youtube.com/embed/videoseries?list=PLsyvDWwjkTqtOmqAiTzzfHspTAztB-udL",
-    },
-    {
-      id: 2,
-      background: "./public/assets/img/slider/slider2.jpg",
-      title: "Another Movie",
-      rating: 8.5,
-      year: 2020,
-      genre: "Drama",
-      duration: "45min",
-      cast: "Actor One, Actor Two",
-      tags: "drama, intense",
-      description: "This is another movie description...",
-      imdb: "./public/assets/img/slider/imdb.png",
-      video: "https://www.youtube.com/embed/videoseries?list=PLsyvDWwjkTqtOmqAiTzzfHspTAztB-udL",
-    },
-    {
-      id: 3,
-      background: "./public/assets/img/slider/slider3.jpg",
-      title: "Yet Another Movie",
-      rating: 7.5,
-      year: 2022,
-      genre: "Comedy",
-      duration: "1h 30min",
-      cast: "Comedian A, Comedian B",
-      tags: "funny, comedy",
-      description: "This is yet another movie description...",
-      imdb: "./public/assets/img/slider/imdb.png",
-      video: "https://www.youtube.com/embed/tgbNymZ7vqY",
-    },
-  ];
-
+  const { data: movies, isLoading, error } = useListMoviesQuery({ page: 1, pageSize: 6 });
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Error loading movies!</p>;
+  }
   return (
     <section className="slider">
       <div className="custom-container-lg">
@@ -58,21 +21,22 @@ const MovieSwiper = () => {
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             pagination={{
               clickable: true,
             }}
             modules={[Autoplay, Pagination, Navigation]}
           >
-            {sliderData.map(slide => (
+            {movies.items.slice(3, 6).map(slide => (
               <SwiperSlide key={slide.id}>
                 <div
                   className="item"
                   style={{
-                    backgroundImage: `url(${slide.background})`,
+                    backgroundImage: `url(${slide.thumbBgImgURL})`,
+                    backgroundSize: "cover",
                     height: "600px",
                     backgroundPosition: "center",
                   }}
@@ -88,40 +52,50 @@ const MovieSwiper = () => {
                             }}
                           >
                             <span className="line-vertical"></span>
-                            {slide.title}
+                            {slide.name}
                           </h2>
                           <ul className="slider-info__list d-flex gap-5 p-0">
-                            <li className="slider-info__item slider-info__item--border text-uppercase">{slide.genre}</li>
+                            <li className="slider-info__item slider-info__item--border text-uppercase">TV-MA</li>
                             <li className="slider-info__item">{slide.duration}</li>
                             <li className="slider-info__item text-uppercase">
                               <Link to="#" className="text-decoration-none text-white">
-                                <img src={slide.imdb} alt="IMDb" className="d-inline-block" />
-                                <span className="l-2">{slide.rating}</span>
+                                <img src="/public/assets/img/slider/imdb.png" alt="IMDb" className="d-inline-block" />
+                                <span className="l-2">{slide.imdbRate}</span>
                               </Link>
                             </li>
                             <li className="slider-info__item text-uppercase">
                               <Link to="#" className="text-decoration-none text-white">
-                                {slide.year}
+                                {new Date(slide.releasedDate).getFullYear()}
                               </Link>
                             </li>
                           </ul>
                           <div className="slider-info__desc">
-                            <p className="mb-2">{slide.description}</p>
+                            <p className="mb-2">{slide.summary}</p>
                           </div>
                           <div className="slider-info__about mt-2">
                             <ul className="slider-info__about-list list-unstyled">
                               <li className="my-3">
                                 <strong>Cast</strong>
-                                <span>{slide.cast}</span>
+                                {slide.actors.map((actor, index) => (
+                                  <span key={actor.id}>
+                                    {actor.name}
+                                    {index < slide.actors.length - 1 ? ", " : ""}
+                                  </span>
+                                ))}
                               </li>
                               <li className="my-3">
                                 <strong>Tags</strong>
-                                <span>{slide.tags}</span>
+                                {slide.tags.map((tag, index) => (
+                                  <span key={tag.id}>
+                                    {tag.name}
+                                    {index < slide.tags.length - 1 ? ", " : ""}
+                                  </span>
+                                ))}
                               </li>
                             </ul>
                           </div>
                           <div className="slider-info__btn-area mt-4">
-                            <Link to="/" className="btn playnow-btn text-uppercase text-decoration-none text-white">
+                            <Link to={`Movie/${slide.id}`} className="btn playnow-btn text-uppercase text-decoration-none text-white">
                               Play now
                             </Link>
                           </div>

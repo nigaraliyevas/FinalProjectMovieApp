@@ -1,14 +1,6 @@
-﻿using Api_EntityConfiguration_Validator_Dtos.Apps.AdminApp.Dtos.UserDto;
-using Api_EntityConfiguration_Validator_Dtos.Settings;
-using AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using MovieApp.Core.Entities;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc;
+using MovieApp.Application.Dtos.UserDto;
+using MovieApp.Application.Service.Interfaces;
 
 namespace MovieApp.API.Controllers
 {
@@ -16,105 +8,59 @@ namespace MovieApp.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IAuthenticationService _authService;
 
-        private readonly UserManager<AppUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IConfiguration _configuration;
-        private readonly IMapper _mapper;
-        private readonly JwtSettings _jwtSettings;
-
-        public AuthController(
-        UserManager<AppUser> userManager,
-        RoleManager<IdentityRole> roleManager,
-        IConfiguration configuration,
-        IMapper mapper,
-        IOptions<JwtSettings> jwtSettings)
+        public AuthController(IAuthenticationService authService)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
-            _configuration = configuration;
-            _mapper = mapper;
-            _jwtSettings = jwtSettings.Value;
+            _authService = authService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(UserRegisterDto userRegisterDto)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto)
         {
-            var existUser = await _userManager.FindByNameAsync(userRegisterDto.Username);
-            if (existUser != null) return Conflict();
-            AppUser appUser = new()
-            {
-                UserName = userRegisterDto.Username,
-                Email = userRegisterDto.Email,
-                FullName = userRegisterDto.Fullname,
-            };
-            var result = await _userManager.CreateAsync(appUser, userRegisterDto.Password);
-            if (!result.Succeeded)
-                return BadRequest(result.Errors);
-            await _userManager.AddToRoleAsync(appUser, "admin");
+            await _authService.Register(userRegisterDto);
             return StatusCode(201);
         }
+
         [HttpPost("Role")]
         public async Task<IActionResult> CreateRole()
         {
-            if (await _roleManager.RoleExistsAsync("member")) return BadRequest();
-            await _roleManager.CreateAsync(new IdentityRole() { Name = "member" });
-
-            if (await _roleManager.RoleExistsAsync("admin")) return BadRequest();
-            await _roleManager.CreateAsync(new IdentityRole() { Name = "admin" });
+            await _authService.CreateRole();
             return StatusCode(201);
         }
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
         {
-            var user = await _userManager.FindByNameAsync(userLoginDto.Username);
-            if (user == null) return NotFound();
-            var result = await _userManager.CheckPasswordAsync(user, userLoginDto.Password);
-            if (!result) return BadRequest();
-
-            //JWT
-
-            var handler = new JwtSecurityTokenHandler();
-
-            var privateKey = Encoding.UTF8
-                .GetBytes(_jwtSettings.SecretKey);
-
-            var credentials = new SigningCredentials(
-                new SymmetricSecurityKey(privateKey),
-                SecurityAlgorithms.HmacSha256);
-
-            var ci = new ClaimsIdentity();
-            ci.AddClaim(new Claim("id", user.Id));
-            ci.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-            ci.AddClaim(new Claim(ClaimTypes.GivenName, user.FullName));
-            ci.AddClaim(new Claim(ClaimTypes.Email, user.Email));
-            var roles = await _userManager.GetRolesAsync(user);
-            ci.AddClaims(roles.Select(r => new Claim(ClaimTypes.Role, r)).ToList());
-
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                SigningCredentials = credentials,
-                Expires = DateTime.UtcNow.AddHours(1),
-                Subject = ci,
-                Audience = _jwtSettings.Audience,
-                Issuer = _jwtSettings.Issuer,
-                NotBefore = DateTime.UtcNow,
-            };
-
-            var token = handler.CreateToken(tokenDescriptor);
-
-            return Ok(new { token = handler.WriteToken(token) });
+            var token = await _authService.Login(userLoginDto);
+            return Ok(new { token });
         }
 
         [HttpGet("Profile")]
         //[Authorize]
-        public async Task<IActionResult> UserProfile()
+        public async Task<IActionResult> UserProfile(string userName)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            if (user == null) return NotFound();
-            return Ok(_mapper.Map<UserGetDto>(user));
+            var userProfile = await _authService.GetUserProfile(userName);
+            return Ok(userProfile);
         }
 
+        //[HttpPost("ForgetPassword")]
+        //public async Task<IActionResult> ForgetPassword(ForgetPasswordDto forgetPasswordDto)
+        //{
+        //    var token = await _authService.GeneratePasswordResetToken(forgetPasswordDto);
+        //    return Ok(new { message = "Password reset token has been sent to your email" });
+        //}
+
+        //[HttpPost("RecoverPassword")]
+        //public async Task<IActionResult> RecoverPassword(RecoverPasswordDto recoverPasswordDto)
+        //{
+        //    await _authService.ResetPassword(recoverPasswordDto);
+        //    return Ok(new { message = "Password has been reset successfully" });
+        //}
+        [HttpDelete("id")]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            return Ok(await _authService.RemoveUser(id));
+        }
     }
 }

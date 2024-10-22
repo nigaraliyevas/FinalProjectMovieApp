@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MovieApp.Application.Dtos.CommentDtos;
 using MovieApp.Application.Service.Interfaces;
-using System.Security.Claims;
 
 namespace MovieApp.API.Controllers
 {
@@ -18,13 +16,32 @@ namespace MovieApp.API.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> Create(CommentCreateDto commentCreateDto)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null) return Unauthorized();
-            commentCreateDto.AppUserId = userId;
             return Ok(await _commentService.Create(commentCreateDto));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _commentService.GetAll());
+        }
+
+        [HttpGet("id/")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _commentService.GetById(id));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(CommentUpdateDto commentUpdateDto, int id)
+        {
+            return Ok(await _commentService.Update(commentUpdateDto, id));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await _commentService.Delete(id));
         }
     }
 }

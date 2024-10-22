@@ -1,0 +1,155 @@
+.genres-box {
+  padding: 30px;
+  background-color: var(--dark-blue-color);
+}
+.genres-box__header {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.genres-box__item {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+.genres-box__item span,
+.genres-box__item svg {
+  transition: 0.3s;
+}
+.genres-box__item a:hover span,
+.genres-box__item a:hover svg {
+  color: var(--blue-color) !important;
+}
+.movie-infos__genre span {
+  color: var(--blue-color);
+  margin-right: 4px;
+  font-size: 15px;
+}
+.genres-box__name {
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+.genres-box__name:hover {
+  color: var(--blue-color);
+}
+.search-box {
+  background-color: var(--dark-blue-color);
+  padding: 30px;
+}
+.search-form__input {
+  background-color: var(--dark-color);
+  padding: 5px 6px;
+  border: 1px solid var(--dark-color);
+  color: white;
+  transition: 0.5s;
+  min-width: 280px;
+}
+.search-form__input:hover {
+  border: 1px solid var(--blue-color);
+}
+.search-form__input[type="text"]:focus {
+  border: 1px solid var(--blue-color) !important;
+  outline: none;
+}
+.search-form__submit {
+  padding: 6px 14px;
+  outline: none;
+  border: none;
+  background-color: var(--blue-color);
+}
+@media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 31%;
+  }
+}
+.custom-filter-box {
+  background-color: var(--dark-blue-color);
+  padding: 30px;
+}
+.custom-filter-form label {
+  font-size: 20px;
+}
+.custom-filter-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.custom-filter-form option {
+  font-weight: 500;
+  font-size: 18px;
+}
+.custom-filter__btn {
+  background-color: var(--blue-color);
+  padding: 8px 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Roboto";
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: none;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.custom-filter__btn:hover {
+  background-color: var(--blue-color-hover);
+}
+.filter-by-year-container {
+  background-color: var(--dark-blue-color);
+  padding: 30px;
+}
+.filter-by-year-container h2 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.years-box {
+  max-height: 310px;
+  overflow-y: auto;
+  scrollbar-color: var(--blue-color) var(--dark-color);
+  scrollbar-width: thin;
+  scrollbar-width: 100px;
+}
+
+.year-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.year-item {
+  width: 50%;
+  color: white;
+  display: inline-block;
+  border: 1px solid var(--dark-color);
+  padding: 10px;
+  color: white;
+  transition: 0.5s;
+  background-color: var(--dark-blue-color);
+}
+.year-item:hover {
+  background-color: var(--blue-color);
+}
+.not-found {
+  text-align: center;
+  color: var(--blue-color);
+  width: 100%;
+  font-size: 35px;
+}
+.free-info span {
+  background-color: var(--blue-color);
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  margin-top: 4px;
+  border-radius: 2px;
+}

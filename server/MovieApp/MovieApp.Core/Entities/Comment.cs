@@ -5,7 +5,7 @@ namespace MovieApp.Core.Entities
     public class Comment : BaseEntity
     {
         public string CommentText { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }

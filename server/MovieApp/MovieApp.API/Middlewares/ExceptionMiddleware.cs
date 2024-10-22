@@ -1,6 +1,6 @@
 ﻿using MovieApp.Application.Exceptions;
 
-namespace AcademyApp.API.Middlewares
+namespace MovieApp.API.Middlewares.ExceptionMiddleware
 {
     public class ExceptionMiddleware
     {

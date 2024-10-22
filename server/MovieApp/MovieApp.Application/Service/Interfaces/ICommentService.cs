@@ -5,9 +5,9 @@ namespace MovieApp.Application.Service.Interfaces
 {
     public interface ICommentService
     {
-        Task<int> Create(CommentCreateDto commentCreateDto);
-        //Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto); // Add this method
-        Task<int> Update(CommentUpdateDto commentUpdateDto);
+        Task<CommentDto> Create(CommentCreateDto commentCreateDto);
+        //Task<int> AddReplyToComment(int parentCommentId, CommentCreateDto commentCreateDto); // do this later if u have time :|
+        Task<int> Update(CommentUpdateDto commentUpdateDto, int id);
         Task<int> Delete(int id);
         Task<List<Comment>> GetAll();
         Task<Comment> GetById(int id);
