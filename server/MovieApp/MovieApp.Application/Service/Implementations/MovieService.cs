@@ -96,7 +96,7 @@ namespace MovieApp.Application.Service.Implementations
 
             return movie.Id;
         }
-        public async Task<int> Update(MovieUpdateDto movieUpdateDto)
+        public async Task<int> Update(int id, MovieUpdateDto movieUpdateDto)
         {
             if (movieUpdateDto == null) throw new CustomException(404, "Null Movie data.");
             var existMovie = await _unitOfWork.MovieRepository.GetEntity(x => x.Id == movieUpdateDto.Id,

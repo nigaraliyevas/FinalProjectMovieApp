@@ -1,0 +1,30 @@
+:root {
+  --blue-color: #1f80e0;
+  --blue-color-hover: #3f9fff;
+  --white-color: #fff;
+  --gray-color: #cecfd1;
+  --main-bg-color: #161616;
+  --dark-color: #0a0e17;
+  --dark-blue-color: #182031;
+  --text-light-gray: #a2a2a2;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Jost";
+}
+.custom-container-lg {
+  max-width: 1620px;
+  margin: 0 auto;
+}
+.content-side {
+  background-color: #6a9ab0;
+}
+@media (max-width: 1200px) {
+  .custom-container-lg {
+    max-width: 100%;
+  }
+}

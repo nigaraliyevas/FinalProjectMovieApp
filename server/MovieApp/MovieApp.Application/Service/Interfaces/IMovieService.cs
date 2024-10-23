@@ -5,7 +5,7 @@ namespace MovieApp.Application.Service.Interfaces
     public interface IMovieService
     {
         Task<int> Create(MovieCreateDto movieCreateDto);
-        Task<int> Update(MovieUpdateDto movieUpdateDto);
+        Task<int> Update(int id, MovieUpdateDto movieUpdateDto);
         Task<int> Delete(int id);
         MovieListDto GetAllByName(string name, int pageSize, int page);
         MovieListDto GetAll(string? search, int pageSize, int page);

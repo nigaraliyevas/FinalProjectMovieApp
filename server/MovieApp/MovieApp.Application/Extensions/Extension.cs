@@ -35,7 +35,7 @@ public static class Extension
         var uriBuilder = new UriBuilder(
             _httpContextAccessor.HttpContext.Request.Scheme,
             _httpContextAccessor.HttpContext.Request.Host.Host,
-            _httpContextAccessor.HttpContext.Request.Host.Port.GetValueOrDefault()); // Handle potential null port
+            _httpContextAccessor.HttpContext.Request.Host.Port.GetValueOrDefault());
         var uri = uriBuilder.Uri.AbsoluteUri;
 
         if (file.Contains(","))
@@ -58,7 +58,7 @@ public static class Extension
 
         return $"{uri}img/{folderName}/{fileName}";
     }
-    private static string GetExtensionFromMime(string mimeType)
+    public static string GetExtensionFromMime(string mimeType)
     {
         return mimeType switch
         {
@@ -68,7 +68,7 @@ public static class Extension
             _ => ".bin" // Default for unknown types
         };
     }
-    private static string GetMimeType(byte[] byteArray)
+    public static string GetMimeType(byte[] byteArray)
     {
         if (byteArray == null || byteArray.Length == 0)
         {

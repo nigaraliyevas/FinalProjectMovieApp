@@ -58,10 +58,10 @@ public class MovieController : ControllerBase
         return Ok(_movieService.Filter(year, genre, language, page, pageSize));
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(MovieUpdateDto movieUpdateDto)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] MovieUpdateDto movieUpdateDto)
     {
-        return Ok(await _movieService.Update(movieUpdateDto));
+        return Ok(await _movieService.Update(id, movieUpdateDto));
     }
 
     [HttpDelete("{id}")]

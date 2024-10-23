@@ -1,0 +1,50 @@
+.movies-section {
+  padding: 20px;
+}
+
+.movies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.movies-table th,
+.movies-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.movies-table th {
+  color: var(--dark-blue-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+.movies-table td {
+  color: var(--blue-color);
+  font-weight: 500;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-controls button {
+  padding: 10px;
+  cursor: pointer;
+}

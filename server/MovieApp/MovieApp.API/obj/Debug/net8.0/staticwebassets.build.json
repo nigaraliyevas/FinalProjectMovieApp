@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jADssSsmi08x3qGcwyJXVfoCst5MFX5nicJXz+9wSyQ=",
+  "Hash": "gAHarXJ/qwZUJy5Xql5H8OP8bzpSJGogo1pOm0IfAas=",
   "Source": "MovieApp.API",
   "BasePath": "_content/MovieApp.API",
   "Mode": "Default",
@@ -2162,6 +2162,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\userImages\\09e49685-6552-40ea-883e-c19387ab0bca.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\userImages\\114fceb5-03f3-4467-8ba7-1cd5f83f18b7.jpg",
+      "SourceId": "MovieApp.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\",
+      "BasePath": "_content/MovieApp.API",
+      "RelativePath": "img/userImages/114fceb5-03f3-4467-8ba7-1cd5f83f18b7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\userImages\\114fceb5-03f3-4467-8ba7-1cd5f83f18b7.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\wwwroot\\img\\userImages\\2493489c-4818-4f32-abf8-eb91a428923c.jpg",
