@@ -96,7 +96,7 @@ namespace MovieApp.Application.Service.Implementations
 
             return movie.Id;
         }
-        public async Task<int> Update(int id, MovieUpdateDto movieUpdateDto)
+        public async Task<int> Update(MovieUpdateDto movieUpdateDto)
         {
             if (movieUpdateDto == null) throw new CustomException(404, "Null Movie data.");
             var existMovie = await _unitOfWork.MovieRepository.GetEntity(x => x.Id == movieUpdateDto.Id,
@@ -505,7 +505,7 @@ namespace MovieApp.Application.Service.Implementations
 
         private async Task<string> SaveImage(string base64Image, string folder, string imageType)
         {
-            if (!string.IsNullOrEmpty(base64Image) && base64Image.CheckContentType("image") && !base64Image.CheckSize(1024))
+            if (!string.IsNullOrEmpty(base64Image))/*&& base64Image.CheckContentType("image") && !base64Image.CheckSize(1024)*/
             {
                 return await base64Image.SaveFile(folder, _httpContextAccessor);
             }

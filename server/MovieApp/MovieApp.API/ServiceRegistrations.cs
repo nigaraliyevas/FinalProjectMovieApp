@@ -171,7 +171,6 @@ namespace MovieApp.API
             {
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder.WithOrigins("http://localhost:5173")
-                                        .WithOrigins("http://localhost:3000/")
                                       .AllowAnyHeader()
                                       .AllowAnyMethod());
             });

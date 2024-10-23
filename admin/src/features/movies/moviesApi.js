@@ -64,12 +64,11 @@ export const movieApi = createApi({
     updateMovie: builder.mutation({
       query: ({ id, formData }) => ({
         url: `/${id}`,
-        method: "PUT",
-        body: formData, 
+        method: "POST",
+        body: formData,
       }),
       invalidatesTags: (result, error, id) => [{ type: "Movie", id }],
     }),
-    
   }),
 });
 
@@ -83,5 +82,4 @@ export const {
   useFreeMoviesQuery,
   useDeleteMovieMutation, // Added delete mutation
   useUpdateMovieMutation, // Added update mutation
-
 } = movieApi;
