@@ -25,7 +25,7 @@ const MainRoutes = () => {
         <Route path="/movie/:id" element={<MoviePage />} />
         <Route path="/Movie" element={<MoviesPage />} />
         <Route path="/free-movies" element={<TvShowsPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register/" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recover" element={<RecoverPasswordPage />} />
         <Route path="/pricing-plan" element={<PricingPlanPage />} />

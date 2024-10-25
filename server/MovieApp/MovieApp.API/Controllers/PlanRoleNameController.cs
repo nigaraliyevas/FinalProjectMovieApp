@@ -14,21 +14,25 @@ namespace MovieApp.API.Controllers
         {
             _planRoleNameService = planRoleNameService;
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(PlanRoleNameCreateDto planRoleNameCreateDto)
         {
             return Ok(await _planRoleNameService.Create(planRoleNameCreateDto));
         }
+
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await _planRoleNameService.Delete(id));
         }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(PlanRoleNameUpdateDto planRoleNameUpdateDto, int id)
         {
             return Ok(await _planRoleNameService.Update(planRoleNameUpdateDto, id));
         }
+
         [HttpGet("id")]
         public async Task<IActionResult> Get(int id)
         {

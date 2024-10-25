@@ -79,9 +79,9 @@ namespace MovieApp.API.Controllers
         }
 
         [HttpPost("payment-success")]
-        public async Task<IActionResult> PaymentSuccess([FromBody] string sessionId)
+        public async Task<IActionResult> PaymentSuccess([FromBody] PaymentSuccessDto paymentSuccessDto)
         {
-            await _paymentService.HandlePaymentSuccessAsync(sessionId);
+            await _paymentService.HandlePaymentSuccessAsync(paymentSuccessDto);
             return Ok();
         }
         [

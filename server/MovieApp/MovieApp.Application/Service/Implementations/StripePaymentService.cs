@@ -46,7 +46,7 @@ namespace MovieApp.Application.Services
             },
                 Mode = "payment",
                 CustomerEmail = paymentCreate.Email,
-                SuccessUrl = "http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}",
+                SuccessUrl = "http://localhost:5173/payment/success",
                 CancelUrl = "http://localhost:5173/cancel",
             };
 
@@ -56,10 +56,10 @@ namespace MovieApp.Application.Services
             return session.Id;
         }
 
-        public async Task HandlePaymentSuccessAsync(string sessionId)
+        public async Task HandlePaymentSuccessAsync(PaymentSuccessDto paymentSuccessDto)
         {
             var service = new SessionService();
-            var session = await service.GetAsync(sessionId);
+            var session = await service.GetAsync(paymentSuccessDto.SessionId);
 
             var userEmail = session.CustomerDetails.Email;
             var user = await _userManager.FindByEmailAsync(userEmail);

@@ -172,8 +172,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sessionId",
-        "Type": "System.String",
+        "Name": "paymentSuccessDto",
+        "Type": "MovieApp.Application.Dtos.PaymentDtos.PaymentSuccessDto",
         "IsRequired": true
       }
     ],

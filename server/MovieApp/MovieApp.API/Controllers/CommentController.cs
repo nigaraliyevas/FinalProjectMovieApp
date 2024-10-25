@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieApp.Application.Dtos.CommentDtos;
 using MovieApp.Application.Service.Interfaces;
 
@@ -15,6 +16,7 @@ namespace MovieApp.API.Controllers
             _commentService = commentService;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CommentCreateDto commentCreateDto)
         {
@@ -33,11 +35,13 @@ namespace MovieApp.API.Controllers
         }
 
         [HttpPut]
+
         public async Task<IActionResult> Update(CommentUpdateDto commentUpdateDto, int id)
         {
             return Ok(await _commentService.Update(commentUpdateDto, id));
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

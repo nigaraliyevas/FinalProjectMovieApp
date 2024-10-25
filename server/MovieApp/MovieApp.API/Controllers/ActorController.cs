@@ -33,12 +33,14 @@ namespace MovieApp.API.Controllers
         }
 
         [HttpPost]
+
         public async Task<IActionResult> Create(ActorCreateDto actorCreateDto)
         {
             return Ok(await _actorService.Create(actorCreateDto));
         }
 
         [HttpPut("{id}")]
+
         public async Task<IActionResult> Update(ActorUpdateDto actorUpdateDto, int id)
         {
             return Ok(await _actorService.Update(actorUpdateDto, id));

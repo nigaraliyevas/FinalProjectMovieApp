@@ -3,88 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\tagcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\tagcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\implementations\\stripepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\implementations\\stripepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\dtos\\paymentdtos\\paymentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\dtos\\paymentdtos\\paymentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\implementations\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\implementations\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\originallanguagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\originallanguagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\implementations\\subscriptionplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\implementations\\subscriptionplanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\planrolenamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\planrolenamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\serviceregistrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\serviceregistrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.application\\service\\implementations\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A134783D-313C-4A57-87EB-D047DB28BA61}|MovieApp.Application\\MovieApp.Application.csproj|solutionrelative:movieapp.application\\service\\implementations\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\implementations\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\implementations\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\configurations\\movieconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\configurations\\movieconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\configurations\\subscriptionplanconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\configurations\\subscriptionplanconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE0B5112-72BC-4205-9C7B-F98A85862F90}|MovieApp.Core\\MovieApp.Core.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE0B5112-72BC-4205-9C7B-F98A85862F90}|MovieApp.Core\\MovieApp.Core.csproj|solutionrelative:movieapp.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\implementations\\moviesliderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\implementations\\moviesliderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE0B5112-72BC-4205-9C7B-F98A85862F90}|MovieApp.Core\\MovieApp.Core.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.core\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE0B5112-72BC-4205-9C7B-F98A85862F90}|MovieApp.Core\\MovieApp.Core.csproj|solutionrelative:movieapp.core\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\implementations\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\implementations\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\implementations\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\implementations\\unitofwork\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.dataaccess\\data\\movieappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE86F08D-E1E2-47A5-82C4-3E4E47FCC4C4}|MovieApp.DataAccess\\MovieApp.DataAccess.csproj|solutionrelative:movieapp.dataaccess\\data\\movieappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|c:\\users\\user\\desktop\\code academy\\tasks\\finalproject\\server\\movieapp\\movieapp.api\\controllers\\subscriptionplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64B32EEB-030B-4EB1-B05E-DD464B723D00}|MovieApp.API\\MovieApp.API.csproj|solutionrelative:movieapp.api\\controllers\\subscriptionplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,279 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IPaymentService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Interfaces\\IPaymentService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Interfaces\\IPaymentService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Interfaces\\IPaymentService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Interfaces\\IPaymentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T02:43:51.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PaymentCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Dtos\\PaymentDtos\\PaymentCreateDto.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Dtos\\PaymentDtos\\PaymentCreateDto.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Dtos\\PaymentDtos\\PaymentCreateDto.cs",
-              "RelativeToolTip": "MovieApp.Application\\Dtos\\PaymentDtos\\PaymentCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T02:42:17.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StripePaymentService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\StripePaymentService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Implementations\\StripePaymentService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\StripePaymentService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Implementations\\StripePaymentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:59:59.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Program.cs",
-              "RelativeDocumentMoniker": "MovieApp.API\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Program.cs",
-              "RelativeToolTip": "MovieApp.API\\Program.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAYwB0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:35:20.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IAuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Interfaces\\IAuthenticationService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Interfaces\\IAuthenticationService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Interfaces\\IAuthenticationService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Interfaces\\IAuthenticationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T00:58:51.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "MovieApp.API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEwAAABdAAAAAAAAAA==",
+              "Title": "TagController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\TagController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\TagController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\TagController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\TagController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T00:06:52.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Implementations\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\AuthenticationService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Implementations\\AuthenticationService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwGAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T23:49:21.72Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MovieService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\MovieService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Implementations\\MovieService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\MovieService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Implementations\\MovieService.cs",
-              "ViewState": "AgIAAHABAAAAAAAAAAAAAHABAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T23:06:30.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MovieConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Configurations\\MovieConfiguration.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Configurations\\MovieConfiguration.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Configurations\\MovieConfiguration.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Configurations\\MovieConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T23:03:27.467Z",
+              "WhenOpened": "2024-10-25T19:54:53.323Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "SubscriptionPlanService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\SubscriptionPlanService.cs",
-              "RelativeDocumentMoniker": "MovieApp.Application\\Service\\Implementations\\SubscriptionPlanService.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Application\\Service\\Implementations\\SubscriptionPlanService.cs",
-              "RelativeToolTip": "MovieApp.Application\\Service\\Implementations\\SubscriptionPlanService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Title": "PlanRoleNameController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\PlanRoleNameController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\PlanRoleNameController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\PlanRoleNameController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\PlanRoleNameController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:49:57.661Z",
+              "WhenOpened": "2024-10-25T19:53:58.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SubscriptionPlanConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Configurations\\SubscriptionPlanConfiguration.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Configurations\\SubscriptionPlanConfiguration.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Configurations\\SubscriptionPlanConfiguration.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Configurations\\SubscriptionPlanConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "OriginalLanguageController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\OriginalLanguageController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\OriginalLanguageController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\OriginalLanguageController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\OriginalLanguageController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA5wCkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T23:03:29.105Z",
+              "WhenOpened": "2024-10-25T19:53:45.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Core\\Entities\\AppUser.cs",
-              "RelativeDocumentMoniker": "MovieApp.Core\\Entities\\AppUser.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Core\\Entities\\AppUser.cs",
-              "RelativeToolTip": "MovieApp.Core\\Entities\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\MovieController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\MovieController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwDEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:54:37.969Z",
+              "WhenOpened": "2024-10-25T19:53:20.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GenreController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\GenreController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\GenreController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\GenreController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\GenreController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwB8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T19:53:03.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\CountryController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\CountryController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T19:52:37.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\CommentController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwCsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T19:52:08.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActorController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\ActorController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\ActorController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\ActorController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\ActorController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwCMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T19:51:31.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ServiceRegistrations.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\ServiceRegistrations.cs",
-              "RelativeDocumentMoniker": "MovieApp.API\\ServiceRegistrations.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\ServiceRegistrations.cs",
-              "RelativeToolTip": "MovieApp.API\\ServiceRegistrations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAA3AAAAAAAAAA==",
+              "Title": "SubscriptionPlanController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\SubscriptionPlanController.cs",
+              "RelativeDocumentMoniker": "MovieApp.API\\Controllers\\SubscriptionPlanController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.API\\Controllers\\SubscriptionPlanController.cs",
+              "RelativeToolTip": "MovieApp.API\\Controllers\\SubscriptionPlanController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:50:25.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MovieSliderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\MovieSliderRepository.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Implementations\\MovieSliderRepository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\MovieSliderRepository.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Implementations\\MovieSliderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T23:05:02.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20241024225218_addedSubscriptionPlanToUser.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Migrations\\20241024225218_addedSubscriptionPlanToUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:52:18.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\Repository.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Implementations\\Repository.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\Repository.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Implementations\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:52:02.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Implementations\\UnitOfWork\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\UnitOfWork\\UnitOfWork.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Implementations\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA5wBkAAABTAgAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:51:27.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Core\\Entities\\Movie.cs",
-              "RelativeDocumentMoniker": "MovieApp.Core\\Entities\\Movie.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.Core\\Entities\\Movie.cs",
-              "RelativeToolTip": "MovieApp.Core\\Entities\\Movie.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:50:42.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\UnitOfWork\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Implementations\\UnitOfWork\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Implementations\\UnitOfWork\\IUnitOfWork.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Implementations\\UnitOfWork\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA9wBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:51:22.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "MovieAppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Data\\MovieAppDbContext.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Data\\MovieAppDbContext.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Data\\MovieAppDbContext.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Data\\MovieAppDbContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA9wBsAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:48:29.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20241024224745_addedSubscriptionPlanToUser.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs",
-              "RelativeDocumentMoniker": "MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\FinalProject\\server\\MovieApp\\MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs",
-              "RelativeToolTip": "MovieApp.DataAccess\\Migrations\\20241024224745_addedSubscriptionPlanToUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:47:45.883Z",
+              "WhenOpened": "2024-10-25T19:54:22.967Z",
               "EditorCaption": ""
             }
           ]

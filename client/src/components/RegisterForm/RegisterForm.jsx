@@ -217,7 +217,9 @@ const FormBox = ({ bgImg }) => {
   const [registerUser, { isLoading, isSuccess, isError, error }] = useRegisterUserMutation();
 
   // Fetch selected plan from session storage
-  const { planId } = useParams(); // Correct extraction of planId
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const planId = queryParams.get("planId");
 
   const photoUpload = e => {
     const reader = new FileReader();
@@ -234,7 +236,7 @@ const FormBox = ({ bgImg }) => {
     email,
     password,
     rePassword,
-    subscriptionPlanId: planId, // Use planId from URL params
+    subscriptionPlanId: parseInt(planId), // Use planId from URL params
     image,
   };
 
@@ -245,7 +247,7 @@ const FormBox = ({ bgImg }) => {
     if (parseInt(planId) !== 1) {
       // Store form data in session storage and navigate to payment
       sessionStorage.setItem("registerFormData", JSON.stringify(formData));
-      localStorage.setItem("subscriptionPlanId", JSON.stringify(planId));
+      sessionStorage.setItem("subscriptionPlanId", JSON.stringify(planId));
       navigate("/payment");
     } else {
       try {

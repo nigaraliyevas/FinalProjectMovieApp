@@ -46,7 +46,6 @@ public class MovieController : ControllerBase
     {
         return Ok(_movieService.GetAllFree(pageSize, page));
     }
-
     [HttpPost]
     public async Task<IActionResult> Create(MovieCreateDto movieCreateDto)
     {
@@ -57,7 +56,6 @@ public class MovieController : ControllerBase
     {
         return Ok(_movieService.Filter(year, genre, language, page, pageSize));
     }
-
     [HttpPost("{id}")]
     public async Task<IActionResult> Update([FromForm] MovieUpdateDto movieUpdateDto)
     {

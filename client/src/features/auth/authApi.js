@@ -77,9 +77,10 @@ export const authApi = createApi({
       query: sessionId => ({
         url: "/Auth/payment-success",
         method: "POST",
-        body: { sessionId },
+        body: { sessionId }, // Adjusted payload structure
       }),
     }),
+
     getProfile: builder.query({
       query: () => "/profile",
     }),

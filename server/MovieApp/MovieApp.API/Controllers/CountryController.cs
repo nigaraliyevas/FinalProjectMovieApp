@@ -26,7 +26,6 @@ namespace MovieApp.API.Controllers
         {
             return Ok(await _countryService.GetById(id));
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(CountryCreateDto countryCreateDto)
         {
@@ -38,7 +37,6 @@ namespace MovieApp.API.Controllers
         {
             return Ok(await _countryService.Update(countryUpdateDto, id));
         }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
