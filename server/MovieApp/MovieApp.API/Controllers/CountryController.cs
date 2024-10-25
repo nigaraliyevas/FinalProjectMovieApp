@@ -21,7 +21,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _countryService.GetAll());
         }
 
-        [HttpGet("id/")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _countryService.GetById(id));
@@ -33,7 +33,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _countryService.Create(countryCreateDto));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(CountryUpdateDto countryUpdateDto, int id)
         {
             return Ok(await _countryService.Update(countryUpdateDto, id));

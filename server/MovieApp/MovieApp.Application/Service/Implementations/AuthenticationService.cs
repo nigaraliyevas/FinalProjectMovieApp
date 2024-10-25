@@ -13,6 +13,7 @@ using MovieApp.Application.Helpers.Helper;
 using MovieApp.Application.Service.Interfaces;
 using MovieApp.Application.Settings;
 using MovieApp.Core.Entities;
+using MovieApp.DataAccess.Implementations.UnitOfWork;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -27,8 +28,9 @@ namespace MovieApp.Application.Service.Implementations
         private readonly IMapper _mapper;
         private readonly JwtSettings _jwtSettings;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AuthenticationService(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IMapper mapper, IOptions<JwtSettings> jwtSettings, IHttpContextAccessor httpContextAccessor = null)
+        public AuthenticationService(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IMapper mapper, IOptions<JwtSettings> jwtSettings, IHttpContextAccessor httpContextAccessor, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -36,9 +38,40 @@ namespace MovieApp.Application.Service.Implementations
             _mapper = mapper;
             _jwtSettings = jwtSettings.Value;
             _httpContextAccessor = httpContextAccessor;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task Register(UserRegisterDto userRegisterDto)
+        //public async Task Register(UserRegisterDto userRegisterDto)
+        //{
+        //    var existUser = await _userManager.FindByNameAsync(userRegisterDto.Username);
+        //    if (existUser != null) throw new CustomException("404", "Conflict");
+
+        //    string userImage = null;
+        //    if (userRegisterDto.Image != null)
+        //    {
+        //        if (!userRegisterDto.Image.CheckContentType("image"))
+        //        {
+        //            throw new CustomException(400, "The file has to be img");
+        //        }
+
+        //        if (userRegisterDto.Image.CheckSize(1024))
+        //        {
+        //            throw new CustomException(400, "The file is too large");
+        //        }
+        //        userImage = await userRegisterDto.Image.SaveFile("userImages", _httpContextAccessor);
+        //    }
+
+
+        //    var newUser = _mapper.Map<AppUser>(userRegisterDto);
+        //    newUser.UserImg = userImage;
+
+        //    var result = await _userManager.CreateAsync(newUser, userRegisterDto.Password);
+        //    if (!result.Succeeded)
+        //        throw new CustomException(400, "Not Succeeded");
+
+        //    await _userManager.AddToRoleAsync(newUser, "member");
+        //}
+        public async Task Register(UserRegisterDto userRegisterDto, int? planId)
         {
             var existUser = await _userManager.FindByNameAsync(userRegisterDto.Username);
             if (existUser != null) throw new CustomException("404", "Conflict");
@@ -50,7 +83,6 @@ namespace MovieApp.Application.Service.Implementations
                 {
                     throw new CustomException(400, "The file has to be img");
                 }
-
                 if (userRegisterDto.Image.CheckSize(1024))
                 {
                     throw new CustomException(400, "The file is too large");
@@ -58,9 +90,12 @@ namespace MovieApp.Application.Service.Implementations
                 userImage = await userRegisterDto.Image.SaveFile("userImages", _httpContextAccessor);
             }
 
-
             var newUser = _mapper.Map<AppUser>(userRegisterDto);
             newUser.UserImg = userImage;
+            if (planId != null)
+            {
+                newUser.SubscriptionPlanId = planId;
+            }
 
             var result = await _userManager.CreateAsync(newUser, userRegisterDto.Password);
             if (!result.Succeeded)
@@ -68,6 +103,7 @@ namespace MovieApp.Application.Service.Implementations
 
             await _userManager.AddToRoleAsync(newUser, "member");
         }
+
 
         public async Task<string> Login(UserLoginDto userLoginDto)
         {
@@ -169,6 +205,21 @@ namespace MovieApp.Application.Service.Implementations
             {
                 throw new CustomException(400, "Password reset failed");
             }
+        }
+        public async Task<int> WatchMovie(string name)
+        {
+            var user = await _userManager.FindByNameAsync(name);
+            if (user == null) throw new CustomException(404, "User not found");
+
+            var freePlanId = await _unitOfWork.SubscriptionPlanRepository.GetEntity(x => x.Price == 0);
+            if (user.SubscriptionPlanId == freePlanId.Id && user.WatchedMoviesCount >= 15)
+            {
+                throw new CustomException(403, "You've reached max count for free plan");
+            }
+            user.WatchedMoviesCount++;
+            await _userManager.UpdateAsync(user);
+            _unitOfWork.Commit();
+            return user.WatchedMoviesCount;
         }
     }
 }

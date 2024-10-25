@@ -8,6 +8,5 @@
         public string Password { get; set; }
         public string RePassword { get; set; }
         public string? Image { get; set; }
-        public int SubscriptionPlanId { get; set; }
     }
 }

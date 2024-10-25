@@ -1,54 +1,81 @@
-﻿//using Microsoft.AspNetCore.Identity;
-//using Microsoft.Extensions.Configuration;
-//using MovieApp.Application.Service.Interfaces;
-//using MovieApp.Core.Entities;
-//using Stripe;
+﻿using Microsoft.AspNetCore.Identity;
+using MovieApp.Application.Dtos.PaymentDtos;
+using MovieApp.Application.Exceptions;
+using MovieApp.Application.Service.Interfaces;
+using MovieApp.Core.Entities;
+using MovieApp.DataAccess.Implementations.UnitOfWork;
+using Stripe;
+using Stripe.Checkout;
 
-//namespace MovieApp.Application.Service.Implementations
-//{
-//    public class StripePaymentService : IPaymentService
-//    {
-//        private readonly UserManager<AppUser> _userManager;
-//        private readonly IConfiguration _configuration;
+namespace MovieApp.Application.Services
+{
+    public class StripePaymentService : IPaymentService
+    {
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IUnitOfWork _unitOfWork;
 
-//        public StripePaymentService(UserManager<AppUser> userManager, IConfiguration configuration)
-//        {
-//            _userManager = userManager;
-//            _configuration = configuration;
-//            StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
-//        }
+        public StripePaymentService(UserManager<AppUser> userManager, IUnitOfWork unitOfWork)
+        {
+            _userManager = userManager;
+            _unitOfWork = unitOfWork;
+        }
 
-//        public async Task<string> CreateSubscription(string userId, string priceId)
-//        {
-//            var user = await _userManager.FindByIdAsync(userId);
-//            //if (user == null) throw new CustomException(404, "User Not found");
+        public async Task<string> CreateCheckoutSessionAsync(PaymentCreateDto paymentCreate)
+        {
+            if (paymentCreate == null) throw new CustomException(404, "Bu nedii");
+            StripeConfiguration.ApiKey = "sk_test_51QBfMMGBs85KmKqHBWcPh5N4rsNjRmdNNPJGcDYp5ZVwIe0XUyHyXVbhLzwhul8qKtwZBMoGw8DXgu27ntyUgc7200M6gkWfhm";
 
-//            //var options = new SubscriptionCreateOptions
-//            //{
-//            //    Customer = user.StripeCustomerId, // Assume user has a Stripe customer ID
-//            //    Items = new List<SubscriptionItemOptions>
-//            //    {
-//            //        new SubscriptionItemOptions { Price = priceId }
-//            //    }
-//            //};
+            var options = new SessionCreateOptions
+            {
+                PaymentMethodTypes = new List<string> { "card" },
+                LineItems = new List<SessionLineItemOptions>
+            {
+                new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
+                        Currency = "usd",
+                        UnitAmount = 4999, // e.g., $49.99 for premium plan
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = "premium",
+                        },
+                    },
+                    Quantity = 1,
+                },
+            },
+                Mode = "payment",
+                CustomerEmail = paymentCreate.Email,
+                SuccessUrl = "http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}",
+                CancelUrl = "http://localhost:5173/cancel",
+            };
 
-//            //var service = new SubscriptionService();
-//            //var subscription = await service.CreateAsync(options);
+            var service = new SessionService();
+            Session session = await service.CreateAsync(options);
 
-//            //user.SubscriptionPlanId = subscription.Id;
-//            //await _userManager.UpdateAsync(user);
+            return session.Id;
+        }
 
-//            //return subscription.Id;
-//            return "s";
-//        }
+        public async Task HandlePaymentSuccessAsync(string sessionId)
+        {
+            var service = new SessionService();
+            var session = await service.GetAsync(sessionId);
 
-//        public async Task AssignDefaultSubscription(string userId)
-//        {
-//            var user = await _userManager.FindByIdAsync(userId);
-//            //if (user == null) throw new CustomException(404, "User not found");
+            var userEmail = session.CustomerDetails.Email;
+            var user = await _userManager.FindByEmailAsync(userEmail);
 
-//            //user.SubscriptionPlanId = "free_plan_id"; // Adjust this based on your plan setup
-//            //await _userManager.UpdateAsync(user);
-//        }
-//    }
-//}
+            if (user != null)
+            {
+                var premiumPlan = await _unitOfWork.SubscriptionPlanRepository
+                    .GetEntity(x => x.PlanRoleNames.Any(rn => rn.Name.ToLower() == "premium"));
+
+                if (premiumPlan != null)
+                {
+                    user.SubscriptionPlanId = premiumPlan.Id;
+                    await _userManager.UpdateAsync(user);
+                }
+            }
+        }
+
+    }
+}

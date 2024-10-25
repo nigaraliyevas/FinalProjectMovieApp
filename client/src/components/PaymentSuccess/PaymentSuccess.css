@@ -1,0 +1,23 @@
+.payment-success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e0f7fa;
+  color: #333;
+}
+
+.loading-message {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.success-message {
+  font-size: 1.5rem;
+  color: green;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: red;
+}

@@ -26,7 +26,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _actorService.GetAllByMovieId(id));
         }
 
-        [HttpGet("id/")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _actorService.GetById(id));
@@ -38,7 +38,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _actorService.Create(actorCreateDto));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(ActorUpdateDto actorUpdateDto, int id)
         {
             return Ok(await _actorService.Update(actorUpdateDto, id));

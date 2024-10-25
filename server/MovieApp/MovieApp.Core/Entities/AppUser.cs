@@ -8,10 +8,8 @@ namespace MovieApp.Core.Entities
         public string FullName { get; set; }
         public string? UserImg { get; set; }
         public List<Comment> Comments { get; set; }
-        public int WatchedMoviesCount { get; set; }
-        public List<WatchedMovie> WatchedMovies { get; set; } = new List<WatchedMovie>();
-        //public string StripeCustomerId { get; set; } // To store the Stripe customer ID
+        public int WatchedMoviesCount { get; set; } = 0;
+        public int? SubscriptionPlanId { get; set; }
         public SubscriptionPlan SubscriptionPlan { get; set; }
-        public int SubscriptionPlanId { get; set; } // To store the user's subscription plan ID
     }
 }

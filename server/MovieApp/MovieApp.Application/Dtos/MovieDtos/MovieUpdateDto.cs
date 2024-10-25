@@ -14,11 +14,11 @@ namespace MovieApp.Application.Dtos.MovieDtos
         public DateTime ReleasedDate { get; set; }
         public byte IMDBRate { get; set; }
 
-        public IFormFile MovieURLUpload { get; set; }
-        public IFormFile MovieTrailerURLUpload { get; set; }
+        public IFormFile? MovieURLUpload { get; set; }
+        public IFormFile? MovieTrailerURLUpload { get; set; }
 
-        public string ThumbImgUpload { get; set; }
-        public string ThumbBgImgUpload { get; set; }
+        public string? ThumbImgUpload { get; set; }
+        public string? ThumbBgImgUpload { get; set; }
 
         public bool IsFree { get; set; }
 
@@ -54,7 +54,10 @@ namespace MovieApp.Application.Dtos.MovieDtos
 
             RuleFor(m => m.ReleasedDate)
                 .LessThanOrEqualTo(DateTime.Now).WithMessage("Released date can't be in the future");
-
+            //RuleFor(m => m.OriginalLanguage)
+            //    .Null();
+            //RuleFor(m => m.OriginalLanguage.Id)
+            //    .Null();
         }
     }
 }

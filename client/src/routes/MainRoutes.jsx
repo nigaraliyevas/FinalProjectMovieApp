@@ -11,6 +11,9 @@ import RecoverPasswordPage from "../pages/RecoverPasswordPage/RecoverPasswordPag
 import TvShowsPage from "../pages/TvShowsPage/TvShowsPage";
 import Error404Page from "../pages/Error404Page/Error404Page";
 import PricingPlanPage from "../pages/PricingPlanPage/PricingPlanPage";
+import Payment from "../components/Payment/Payment";
+import PaymentCancel from "../components/PaymentCancel/PaymentCancel";
+import PaymentSuccess from "../components/PaymentSuccess/PaymentSuccess";
 
 const MainRoutes = () => {
   return (
@@ -26,6 +29,9 @@ const MainRoutes = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recover" element={<RecoverPasswordPage />} />
         <Route path="/pricing-plan" element={<PricingPlanPage />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/payment/success" element={<PaymentSuccess />} />
+        <Route path="/payment/cancel" element={<PaymentCancel />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
     </MainLayout>

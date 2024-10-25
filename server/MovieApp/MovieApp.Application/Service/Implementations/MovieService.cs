@@ -98,7 +98,7 @@ namespace MovieApp.Application.Service.Implementations
         }
         public async Task<int> Update(MovieUpdateDto movieUpdateDto)
         {
-            if (movieUpdateDto == null) throw new CustomException(404, "Null Movie data.");
+            if (movieUpdateDto == null) throw new CustomException(404, "Null Exception.");
             var existMovie = await _unitOfWork.MovieRepository.GetEntity(x => x.Id == movieUpdateDto.Id,
              "MovieActors.Actor",
              "MovieCountries.Country",
@@ -111,8 +111,6 @@ namespace MovieApp.Application.Service.Implementations
 
             if (existMovie == null)
                 throw new CustomException(404, "Not found.");
-
-            if (existMovie == null) throw new CustomException(404, "Movie not found.");
 
             _mapper.Map(movieUpdateDto, existMovie);
             var originalLanguage = await _unitOfWork.OriginalLanguageRepository.GetEntity(x => x.Id == existMovie.OriginalLanguageId);
@@ -175,9 +173,7 @@ namespace MovieApp.Application.Service.Implementations
                     "Comments",
                     "Comments.AppUser",
                     "OriginalLanguage",
-                    "MovieSlider",
-                    "WatchedByUsers"
-
+                    "MovieSlider"
                 );
 
             if (!string.IsNullOrEmpty(search))
@@ -218,9 +214,7 @@ namespace MovieApp.Application.Service.Implementations
                 "OriginalLanguage",
                 "MovieSlider",
                 "Comments",
-                "Comments.AppUser",
-                "WatchedByUsers"
-
+                "Comments.AppUser"
             );
 
             query = query.Where(x => x.ReleasedDate.Year == year);
@@ -257,9 +251,7 @@ namespace MovieApp.Application.Service.Implementations
                 "Comments",
                 "Comments.AppUser",
                 "OriginalLanguage",
-                "MovieSlider",
-                "WatchedByUsers"
-
+                "MovieSlider"
             );
 
             query = query.Where(x => x.IsFree);
@@ -297,9 +289,7 @@ namespace MovieApp.Application.Service.Implementations
                  "Comments",
                  "Comments.AppUser",
                  "OriginalLanguage",
-                 "MovieSlider",
-                 "WatchedByUsers"
-
+                 "MovieSlider"
              );
             query = query.Where(x => x.MovieGenres.Any(mg => mg.Genre.Name.ToLower() == name.ToLower()));
 
@@ -337,9 +327,7 @@ namespace MovieApp.Application.Service.Implementations
                  "Comments",
                  "Comments.AppUser",
                  "OriginalLanguage",
-                 "MovieSlider",
-                 "WatchedByUsers"
-
+                 "MovieSlider"
              );
             query = query.Where(x => x.Name.ToLower().Contains(name.ToLower()));
 
@@ -377,9 +365,7 @@ namespace MovieApp.Application.Service.Implementations
                  "Comments",
                 "Comments.AppUser",
                  "OriginalLanguage",
-                 "MovieSlider",
-                 "WatchedByUsers"
-
+                 "MovieSlider"
             ).FirstOrDefault(x => x.Id == id);
             if (existMovie == null) throw new CustomException(404, "Not Found");
             existMovie.ViewCount++;
@@ -400,9 +386,7 @@ namespace MovieApp.Application.Service.Implementations
                  "Comments",
                  "Comments.AppUser",
                  "OriginalLanguage",
-                 "MovieSlider",
-                 "WatchedByUsers"
-
+                 "MovieSlider"
                 );
 
             if (year != null)

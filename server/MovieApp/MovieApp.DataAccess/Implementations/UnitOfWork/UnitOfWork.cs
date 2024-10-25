@@ -20,11 +20,10 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
         public IMovieGenreRepository MovieGenreRepository { get; private set; }
         public ISubscriptionPlanRepository SubscriptionPlanRepository { get; private set; }
         public IPlanRoleNameRepository PlanRoleNameRepository { get; private set; }
-        public IWatchedMovieRepository WatchedMovieRepository { get; private set; }
         public IMovieSliderRepository MovieSliderRepository { get; private set; }
 
 
-        public UnitOfWork(MovieAppDbContext context, IMovieRepository movieRepository, ICommentRepository commentRepository, IActorRepository actorRepository, IGenreRepository genreRepository, ICountryRepository countryRepository, ITagRepository tagRepository, IOriginalLanguageRepository originalLanguageRepository, IMovieActorRepository movieActorRepository, IMovieTagRepository movieTagRepository, IMovieCountryRepository movieCountryRepository, IMovieGenreRepository movieGenreRepository, ISubscriptionPlanRepository subscriptionPlanRepository, IPlanRoleNameRepository planRoleNameRepository, IWatchedMovieRepository watchedMovieRepository, IMovieSliderRepository movieSliderRepository)
+        public UnitOfWork(MovieAppDbContext context, IMovieRepository movieRepository, ICommentRepository commentRepository, IActorRepository actorRepository, IGenreRepository genreRepository, ICountryRepository countryRepository, ITagRepository tagRepository, IOriginalLanguageRepository originalLanguageRepository, IMovieActorRepository movieActorRepository, IMovieTagRepository movieTagRepository, IMovieCountryRepository movieCountryRepository, IMovieGenreRepository movieGenreRepository, ISubscriptionPlanRepository subscriptionPlanRepository, IPlanRoleNameRepository planRoleNameRepository, IMovieSliderRepository movieSliderRepository)
         {
             _context = context;
             MovieRepository = movieRepository;
@@ -40,7 +39,6 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
             MovieGenreRepository = movieGenreRepository;
             SubscriptionPlanRepository = subscriptionPlanRepository;
             PlanRoleNameRepository = planRoleNameRepository;
-            WatchedMovieRepository = watchedMovieRepository;
             MovieSliderRepository = movieSliderRepository;
         }
 

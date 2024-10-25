@@ -21,7 +21,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _tagService.GetAll());
         }
 
-        [HttpGet("id/")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _tagService.GetById(id));
@@ -33,7 +33,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _tagService.Create(tagCreateDto));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(TagUpdateDto tagUpdateDto, int id)
         {
             return Ok(await _tagService.Update(tagUpdateDto, id));

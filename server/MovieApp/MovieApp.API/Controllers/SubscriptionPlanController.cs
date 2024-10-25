@@ -46,18 +46,7 @@ namespace MovieApp.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, SubscriptionPlanUpdateDto subscriptionPlanDto)
         {
-            var existingSubscriptionPlan = _subscriptionPlanService.GetById(id);
-            if (existingSubscriptionPlan == null)
-            {
-                return NotFound();
-            }
-
-            var result = await _subscriptionPlanService.Update(subscriptionPlanDto, id);
-            if (result > 0)
-            {
-                return Ok();
-            }
-            return BadRequest("Failed to update subscription plan");
+            return Ok(await _subscriptionPlanService.Update(id, subscriptionPlanDto));
         }
 
         [HttpDelete("{id}")]

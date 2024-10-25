@@ -1,0 +1,56 @@
+/* Add this CSS for better styling */
+
+.countries-list {
+  max-width: 1200px;
+  margin: 150px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.countries-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.countries-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.countries-list th,
+.countries-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.countries-list th {
+  background-color: #007bff;
+  color: white;
+}
+
+.countries-list .btn {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.countries-list .btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.countries-list .btn-warning {
+  background-color: #ffc107;
+  color: white;
+}
+
+.countries-list .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}

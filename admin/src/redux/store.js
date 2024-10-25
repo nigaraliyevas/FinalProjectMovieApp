@@ -10,6 +10,7 @@ import { commentApi } from "../features/comments/commentApi";
 import { actorsApi } from "../features/actors/actorsApi";
 import { tagsApi } from "../features/tags/tagsApi";
 import { countriesApi } from "../features/countries/countriesApi";
+import { subscriptionPlanApi } from "../features/subscriptionPlan/subscriptionPlanApi";
 
 export const store = configureStore({
   reducer: {
@@ -23,7 +24,8 @@ export const store = configureStore({
     [actorsApi.reducerPath]: actorsApi.reducer,
     [tagsApi.reducerPath]: tagsApi.reducer,
     [countriesApi.reducerPath]: countriesApi.reducer,
+    [subscriptionPlanApi.reducerPath]: subscriptionPlanApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(genresApi.middleware, movieApi.middleware, languageApi.middleware, authApi.middleware, planApi.middleware, commentApi.middleware, actorsApi.middleware, tagsApi.middleware,countriesApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(genresApi.middleware, movieApi.middleware, languageApi.middleware, authApi.middleware, planApi.middleware, commentApi.middleware, actorsApi.middleware, tagsApi.middleware, countriesApi.middleware, subscriptionPlanApi.middleware),
 });
 export default store;

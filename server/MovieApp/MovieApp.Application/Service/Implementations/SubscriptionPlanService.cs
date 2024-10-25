@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MovieApp.Application.Dtos.SubscriptionPlanDtos;
-using MovieApp.Application.Dtos.WatchedMovie;
 using MovieApp.Application.Exceptions;
 using MovieApp.Application.Service.Interfaces;
 using MovieApp.Core.Entities;
@@ -12,13 +11,11 @@ namespace MovieApp.Application.Service.Implementations
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly IWatchedMovieService _watchedMovieService;
 
-        public SubscriptionPlanService(IUnitOfWork unitOfWork, IMapper mapper, IWatchedMovieService watchedMovieService)
+        public SubscriptionPlanService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _watchedMovieService = watchedMovieService;
         }
 
         public async Task<IEnumerable<SubscriptionPlan>> GetAll()
@@ -51,18 +48,19 @@ namespace MovieApp.Application.Service.Implementations
             return subscriptionPlan.Id;
         }
 
-        public async Task<int> Update(SubscriptionPlanUpdateDto subscriptionPlanDto, int id)
+        public async Task<int> Update(int id, SubscriptionPlanUpdateDto subscriptionPlanDto)
         {
             if (subscriptionPlanDto == null) throw new CustomException(400, "Invalid subscription plan data.");
 
             var existPlan = await _unitOfWork.SubscriptionPlanRepository.GetEntity(x => x.Id == id);
             if (existPlan == null) throw new CustomException(404, "Not found");
-
-            var subscriptionPlan = _mapper.Map<SubscriptionPlan>(subscriptionPlanDto);
-            await _unitOfWork.SubscriptionPlanRepository.Update(subscriptionPlan);
+            existPlan.UpdatedDate = DateTime.Now;
+            existPlan.Price = subscriptionPlanDto.Price;
+            existPlan.MaxMovies = subscriptionPlanDto.MaxMovies;
+            await _unitOfWork.SubscriptionPlanRepository.Update(existPlan);
             _unitOfWork.Commit();
 
-            return subscriptionPlan.Id;
+            return existPlan.Id;
         }
 
         public async Task<int> Delete(int id)
@@ -76,25 +74,5 @@ namespace MovieApp.Application.Service.Implementations
             return subscriptionPlan.Id;
         }
 
-        public async Task MarkMovieAsWatched(WatchedMovieDto watchedMovieDto)
-        {
-            if (watchedMovieDto == null) throw new CustomException(400, "Invalid watched movie data.");
-
-            var subscriptionPlan = await GetById(watchedMovieDto.SubscriptionPlanId);
-
-            var watchedCount = await _watchedMovieService.GetWatchedMoviesCount(watchedMovieDto.UserId);
-
-            if (subscriptionPlan.MaxMovies != -1 && watchedCount >= subscriptionPlan.MaxMovies)
-            {
-                throw new CustomException(403, "You've reached max count for this plan");
-            }
-
-            await _watchedMovieService.MarkMovieAsWatched(watchedMovieDto);
-        }
-
-        public async Task<int> GetWatchedMoviesCount(string userId)
-        {
-            return await _watchedMovieService.GetWatchedMoviesCount(userId);
-        }
     }
 }

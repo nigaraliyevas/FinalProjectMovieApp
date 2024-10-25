@@ -1,5 +1,4 @@
 ﻿using MovieApp.Application.Dtos.SubscriptionPlanDtos;
-using MovieApp.Application.Dtos.WatchedMovie;
 using MovieApp.Core.Entities;
 
 namespace MovieApp.Application.Service.Interfaces
@@ -9,9 +8,8 @@ namespace MovieApp.Application.Service.Interfaces
         Task<SubscriptionPlan> GetById(int id);
         Task<IEnumerable<SubscriptionPlan>> GetAll();
         Task<int> Create(SubscriptionPlanCreateDto subscriptionPlan);
-        Task<int> Update(SubscriptionPlanUpdateDto subscriptionPlan, int id);
+        Task<int> Update(int id, SubscriptionPlanUpdateDto subscriptionPlan);
         Task<int> Delete(int id);
-        Task MarkMovieAsWatched(WatchedMovieDto watchedMovieDto);
-        Task<int> GetWatchedMoviesCount(string userId);
+
     }
 }

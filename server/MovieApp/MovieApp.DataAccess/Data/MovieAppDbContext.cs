@@ -25,7 +25,6 @@ namespace MovieApp.DataAccess.Data
         public DbSet<OriginalLanguage> OriginalLanguages { get; set; }
         public DbSet<PlanRoleName> PlanRoleNames { get; set; }
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
-        public DbSet<WatchedMovie> WatchedMovies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

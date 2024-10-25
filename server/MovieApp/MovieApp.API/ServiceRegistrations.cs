@@ -10,6 +10,7 @@ using MovieApp.Application.Dtos.MovieDtos;
 using MovieApp.Application.Profiles;
 using MovieApp.Application.Service.Implementations;
 using MovieApp.Application.Service.Interfaces;
+using MovieApp.Application.Services;
 using MovieApp.Application.Settings;
 using MovieApp.Core.Entities;
 using MovieApp.Core.Repositories;
@@ -17,6 +18,7 @@ using MovieApp.DataAccess.Data;
 using MovieApp.DataAccess.Implementations;
 using MovieApp.DataAccess.Implementations.UnitOfWork;
 using Newtonsoft.Json;
+using Stripe;
 using System.Text;
 
 namespace MovieApp.API
@@ -75,9 +77,6 @@ namespace MovieApp.API
             services.AddScoped<ISubscriptionPlanRepository, SubscriptionPlanRepository>();
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
-
-            services.AddScoped<IWatchedMovieService, WatchedMovieService>();
-            services.AddScoped<IWatchedMovieRepository, WatchedMovieRepository>();
 
             services.AddScoped<IMovieSliderService, MovieSliderService>();
             services.AddScoped<IMovieSliderRepository, MovieSliderRepository>();
@@ -174,6 +173,13 @@ namespace MovieApp.API
                                       .AllowAnyHeader()
                                       .AllowAnyMethod());
             });
+
+            //Stripe
+            StripeConfiguration.ApiKey = config["Stripe:SecretKey"];
+
+            services.AddScoped<IPaymentService, StripePaymentService>();
+
+
         }
     }
 }

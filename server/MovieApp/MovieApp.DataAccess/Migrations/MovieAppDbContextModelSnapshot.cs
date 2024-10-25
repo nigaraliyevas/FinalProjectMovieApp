@@ -227,7 +227,7 @@ namespace MovieApp.DataAccess.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SubscriptionPlanId")
+                    b.Property<int?>("SubscriptionPlanId")
                         .HasColumnType("int");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -654,39 +654,6 @@ namespace MovieApp.DataAccess.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("MovieApp.Core.Entities.WatchedMovie", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("WatchedOn")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("WatchedMovies");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -742,9 +709,7 @@ namespace MovieApp.DataAccess.Migrations
                 {
                     b.HasOne("MovieApp.Core.Entities.SubscriptionPlan", "SubscriptionPlan")
                         .WithMany("AppUsers")
-                        .HasForeignKey("SubscriptionPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SubscriptionPlanId");
 
                     b.Navigation("SubscriptionPlan");
                 });
@@ -881,25 +846,6 @@ namespace MovieApp.DataAccess.Migrations
                     b.Navigation("SubscriptionPlan");
                 });
 
-            modelBuilder.Entity("MovieApp.Core.Entities.WatchedMovie", b =>
-                {
-                    b.HasOne("MovieApp.Core.Entities.Movie", "Movie")
-                        .WithMany("WatchedByUsers")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MovieApp.Core.Entities.AppUser", "User")
-                        .WithMany("WatchedMovies")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Movie");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("MovieApp.Core.Entities.Actor", b =>
                 {
                     b.Navigation("MovieActors");
@@ -908,8 +854,6 @@ namespace MovieApp.DataAccess.Migrations
             modelBuilder.Entity("MovieApp.Core.Entities.AppUser", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("WatchedMovies");
                 });
 
             modelBuilder.Entity("MovieApp.Core.Entities.Comment", b =>
@@ -941,8 +885,6 @@ namespace MovieApp.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("MovieTags");
-
-                    b.Navigation("WatchedByUsers");
                 });
 
             modelBuilder.Entity("MovieApp.Core.Entities.OriginalLanguage", b =>

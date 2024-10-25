@@ -1,12 +1,12 @@
-﻿//namespace MovieApp.Application.Service.Interfaces
-//{
-//    public interface IPaymentService
-//    {
-//        //Task<bool> ProcessPayment(decimal amount, string paymentMethod, string userId);
+﻿using MovieApp.Application.Dtos.PaymentDtos;
 
-//        Task<string> CreateSubscription(string userId, string priceId);
-//        Task AssignDefaultSubscription(string userId);
-//    }
+namespace MovieApp.Application.Service.Interfaces
+{
+    public interface IPaymentService
+    {
+        Task<string> CreateCheckoutSessionAsync(PaymentCreateDto paymentCreateDto);
+        Task HandlePaymentSuccessAsync(string sessionId);
+    }
 
 
-//}
+}

@@ -2,6 +2,7 @@
   background-color: #001f3f !important;
   padding: 10px;
 }
+
 .navbar-items__logo-icon {
   color: var(--white-color);
   background-color: var(--blue-color);
@@ -33,9 +34,19 @@
   background-color: #36637e;
 }
 .submenu {
-  transition: 0.5s;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
   list-style: none;
+  visibility: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
 }
 .submenu li:hover {
   background-color: #001f3f;
+}
+
+.submenu.open {
+  max-height: 300px; /* Adjust based on your expected submenu height */
+  opacity: 1;
+  visibility: visible;
 }

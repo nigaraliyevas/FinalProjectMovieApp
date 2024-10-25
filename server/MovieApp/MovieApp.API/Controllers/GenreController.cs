@@ -21,7 +21,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _genreService.GetAll());
         }
 
-        [HttpGet("id/")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _genreService.GetById(id));
@@ -33,7 +33,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _genreService.Create(genreCreateDto));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(GenreUpdateDto genreUpdateDto, int id)
         {
             return Ok(await _genreService.Update(genreUpdateDto, id));

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieApp.Application.Dtos.PaymentDtos;
 using MovieApp.Application.Dtos.UserDto;
 using MovieApp.Application.Service.Interfaces;
 
@@ -9,16 +10,18 @@ namespace MovieApp.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthenticationService _authService;
+        private readonly IPaymentService _paymentService;
 
-        public AuthController(IAuthenticationService authService)
+        public AuthController(IAuthenticationService authService, IPaymentService paymentService)
         {
             _authService = authService;
+            _paymentService = paymentService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDto userRegisterDto, int? planId)
         {
-            await _authService.Register(userRegisterDto);
+            await _authService.Register(userRegisterDto, planId);
             return StatusCode(201);
         }
 
@@ -61,6 +64,32 @@ namespace MovieApp.API.Controllers
         public async Task<IActionResult> DeleteUser(string id)
         {
             return Ok(await _authService.RemoveUser(id));
+        }
+
+        [HttpPost("create-checkout-session")]
+        public async Task<IActionResult> CreateCheckoutSession([FromBody] PaymentCreateDto paymentCreateDto)
+        {
+            if (string.IsNullOrWhiteSpace(paymentCreateDto.Email))
+            {
+                return BadRequest("Email cannot be empty.");
+            }
+
+            var sessionId = await _paymentService.CreateCheckoutSessionAsync(paymentCreateDto);
+            return Ok(new { sessionId });
+        }
+
+        [HttpPost("payment-success")]
+        public async Task<IActionResult> PaymentSuccess([FromBody] string sessionId)
+        {
+            await _paymentService.HandlePaymentSuccessAsync(sessionId);
+            return Ok();
+        }
+        [
+        HttpPost("watch-movie/{name}")]
+        public async Task<IActionResult> WatchMovie(string name)
+        {
+            await _authService.WatchMovie(name);
+            return Ok();
         }
     }
 }

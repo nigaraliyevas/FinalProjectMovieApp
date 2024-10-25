@@ -8,11 +8,13 @@ import { jwtDecode } from "jwt-decode";
 import { Modal, Button } from "react-bootstrap";
 import { useGetMovieByIdQuery } from "../../features/movies/moviesApi";
 import { useCreateCommentMutation, useDeleteCommentMutation } from "../../features/comments/commentApi.js";
+import { useWatchMovieMutation } from "../../features/auth/authApi";
 
 const MovieSideBar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isCommented, setIsCommented] = useState(false);
   const [username, setUsername] = useState(null);
+
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
@@ -30,7 +32,15 @@ const MovieSideBar = () => {
   const handlePlay = () => {
     setIsPlaying(true);
   };
-
+  const handleAddCommentClick = () => {
+    if (!token) {
+      // If the user is not logged in, show the login modal
+      setShowLoginModal(true);
+    } else {
+      // If the user is logged in, toggle the commenting state
+      setIsCommented(!isCommented);
+    }
+  };
   const extractUsernameFromToken = token => {
     try {
       const decoded = jwtDecode(token);
@@ -69,10 +79,10 @@ const MovieSideBar = () => {
 
   const handleLoginModalShow = () => setShowLoginModal(true);
 
+  const token = localStorage.getItem("token") || sessionStorage.getItem("token");
   const handleSubmitComment = async e => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token") || sessionStorage.getItem("token");
     const decodedToken = token ? jwtDecode(token) : null;
     const appUserId = decodedToken ? decodedToken.id : null;
 
@@ -124,14 +134,43 @@ const MovieSideBar = () => {
 
   if (isLoading) return <div>Loading...</div>;
 
+  const getUserIdFromToken = () => {
+    const token = localStorage.getItem("token");
+    if (!token) return null;
+
+    try {
+      const decoded = jwtDecode(token);
+      return decoded?.unique_name; // Extract user ID from 'sub' field
+    } catch (error) {
+      console.error("Invalid token:", error);
+      return null;
+    }
+  };
+  const [watchMovie, { isLoading: watchLoading, isError: watchError }] = useWatchMovieMutation();
+  const userId = getUserIdFromToken(); // Get user ID from the token
+
+  const handleWatchMovie = async () => {
+    if (!userId) {
+      alert("Please log in to watch the movie!");
+      return;
+    }
+
+    try {
+      const response = await watchMovie(userId).unwrap();
+      console.log(`You have watched ${response} movies so far.`);
+    } catch (err) {
+      console.error("Error watching movie: ", err);
+    }
+  };
   return (
     <>
       <div className="show-content__left col-lg-9">
         <div className="video-container" onClick={handlePlay}>
+          {watchError && <p className="error">Error watching movie</p>}
           {!isPlaying && (
             <>
               <div className="thumbnail" style={{ backgroundImage: `url(${movie.thumbBgImgURL})` }}></div>
-              <div className="show__play-button"></div>
+              <div className="show__play-button" onClick={handleWatchMovie} ></div>
             </>
           )}
           {isPlaying && <iframe id="video-iframe" src={`https://mega.nz/embed/${movie.movieURL.split("/file/")[1]}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Movie Player"></iframe>}
@@ -141,7 +180,7 @@ const MovieSideBar = () => {
           <div className="show-comments__top">
             <div className="d-flex justify-content-between">
               <h2 className="show-comments__top-header">Comments</h2>
-              <button id="add-comment__btn" onClick={username ? () => setIsCommented(!isCommented) : handleLoginModalShow}>
+              <button id="add-comment__btn" onClick={handleAddCommentClick}>
                 Add Comment
               </button>
             </div>
@@ -174,15 +213,12 @@ const MovieSideBar = () => {
                     {comments.slice(0, commentsToShow).map(comment => (
                       <div key={comment.id} className="col-12 mb-3">
                         <div className="d-flex align-items-center">
-                          <div className="bottom-comment__img-container d-inline-block">
-                            {/* Use comment.userImg instead of userImage */}
-                            {comment.userImg ? <img width={75} height={75} src={comment.userImg} alt="" style={{ borderRadius: "50%" }} /> : <FontAwesomeIcon className="user-icon" icon={faUser} style={{ color: "#ffffff" }} />}
-                          </div>
+                          <div className="bottom-comment__img-container d-inline-block">{comment.userImg ? <img width={75} height={75} src={comment.userImg} alt="" style={{ borderRadius: "50%" }} /> : <FontAwesomeIcon className="user-icon" icon={faUser} style={{ color: "#ffffff" }} />}</div>
                           <Link id={comment.appUserId} to="" className="comment-user__name text-white">
                             {comment.appUser}
                           </Link>
                           <span>{getDate(comment.createdAt)}</span>
-                          {comment.appUserId === jwtDecode(localStorage.getItem("token") || sessionStorage.getItem("token")).id && (
+                          {token && comment.appUserId === jwtDecode(token).id && (
                             <button onClick={() => handleDeleteComment(comment.id)} className="delete-button">
                               Delete
                             </button>
@@ -214,7 +250,25 @@ const MovieSideBar = () => {
             </div>
           </div>
         </div>
-        {/* Modal for popuops*/}
+        {/* Modal for Login Notification */}
+        <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)}>
+          <div className="notification-modal">
+            <Modal.Header closeButton>
+              <Modal.Title>Login Required</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>You need to log in to add a comment.</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => setShowLoginModal(false)}>
+                Close
+              </Button>
+              <Link to="/login" className="btn btn-primary">
+                Go to Login
+              </Link>
+            </Modal.Footer>
+          </div>
+        </Modal>
+
+        {/* Existing notification modal for comment actions */}
         <Modal show={showNotificationModal} onHide={() => setShowNotificationModal(false)}>
           <div className="notification-modal">
             <Modal.Header closeButton>

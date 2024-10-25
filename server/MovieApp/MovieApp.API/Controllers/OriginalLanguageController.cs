@@ -21,7 +21,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _originalLanguage.GetAll());
         }
 
-        [HttpGet("id/")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _originalLanguage.GetById(id));
@@ -33,7 +33,7 @@ namespace MovieApp.API.Controllers
             return Ok(await _originalLanguage.Create(originalLanguageCreateDto));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(OriginalLanguageUpdateDto originalLanguageUpdateDto, int id)
         {
             return Ok(await _originalLanguage.Update(originalLanguageUpdateDto, id));

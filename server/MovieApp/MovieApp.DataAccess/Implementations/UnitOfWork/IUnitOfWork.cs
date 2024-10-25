@@ -17,7 +17,6 @@ namespace MovieApp.DataAccess.Implementations.UnitOfWork
         public IMovieGenreRepository MovieGenreRepository { get; }
         public ISubscriptionPlanRepository SubscriptionPlanRepository { get; }
         public IPlanRoleNameRepository PlanRoleNameRepository { get; }
-        public IWatchedMovieRepository WatchedMovieRepository { get; }
         public IMovieSliderRepository MovieSliderRepository { get; }
 
 

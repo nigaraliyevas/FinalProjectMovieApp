@@ -1,0 +1,56 @@
+/* CountryUpdate.css */
+
+.country-update-container {
+  max-width: 600px;
+  margin: 150px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.country-update-title {
+  font-size: 2rem;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.country-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.country-update-form label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.country-update-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.country-update-form input:focus {
+  border-color: #007bff;
+}
+
+.country-update-form .btn-success {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.country-update-form .btn-success:hover {
+  background-color: #218838;
+}

@@ -31,9 +31,6 @@ namespace MovieApp.Core.Entities
         public List<Comment> Comments { get; set; } //one to many
 
         public List<MovieCountry> MovieCountries { get; set; }
-        public List<WatchedMovie> WatchedByUsers { get; set; } = new List<WatchedMovie>();
-
-
 
     }
 }

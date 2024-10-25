@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useGetMovieByIdQuery } from "../../features/movies/moviesApi"; 
+import { useGetMovieByIdQuery } from "../../features/movies/moviesApi";
 import "./MovieDetail.css";
 
 const MovieDetail = () => {
-  const { id } = useParams(); 
-  const { data: movie, isLoading, error } = useGetMovieByIdQuery(id); 
+  const { id } = useParams();
+  const { data: movie, isLoading, error } = useGetMovieByIdQuery(id);
   console.log(movie);
 
   if (isLoading) return <div>Loading...</div>;

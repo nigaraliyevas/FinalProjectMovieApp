@@ -27,7 +27,7 @@ export const languageApi = createApi({
     }),
     deleteLanguage: builder.mutation({
       query: id => ({
-        url: `OriginalLanLanguage/${id}`,
+        url: `OriginalLanguage/${id}`,
         method: "DELETE",
       }),
     }),

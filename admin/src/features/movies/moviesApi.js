@@ -35,19 +35,19 @@ export const movieApi = createApi({
       providesTags: (result, error, name) => [{ type: "SearchMovies", name }],
     }),
 
-    // Filter movies by genre (no change needed for now, assuming you keep the same logic)
+    // Filter movies by genre
     getMoviesByGenre: builder.query({
       query: ({ name, pageSize, page }) => `genre?name=${name}&pageSize=${pageSize}&page=${page}`,
       providesTags: (result, error, name) => [{ type: "GenreMovies", name }],
     }),
 
-    // Filter movies by year (updated URL)
+    // Filter movies by year
     filterByYear: builder.query({
       query: ({ year, pageSize, page }) => `year?year=${year}&pageSize=${pageSize}&page=${page}`,
       providesTags: (result, error, year) => [{ type: "YearMovies", year }],
     }),
 
-    // Custom filter (updated URL)
+    // Custom filter
     customFilter: builder.query({
       query: ({ year, genre, language, page, pageSize }) => `filter?year=${year}&genre=${genre}&language=${language}&page=${page}&pageSize=${pageSize}`,
       providesTags: (result, error, filters) => [{ type: "CustomFilteredMovies", filters }],
@@ -61,17 +61,30 @@ export const movieApi = createApi({
       }),
       invalidatesTags: (result, error, id) => [{ type: "Movie", id }],
     }),
+
+    // Mutation to update a movie
     updateMovie: builder.mutation({
       query: ({ id, formData }) => ({
         url: `/${id}`,
-        method: "POST",
-        body: formData,
+        method: "POST", // Use PUT or PATCH for updates
+        body: formData, // formData includes all fields, including files
       }),
       invalidatesTags: (result, error, id) => [{ type: "Movie", id }],
+    }),
+
+    // Mutation to create a movie
+    createMovie: builder.mutation({
+      query: formData => ({
+        url: "/",
+        method: "POST",
+        body: formData, // formData includes all fields, including files
+      }),
+      invalidatesTags: [{ type: "Movies" }], // Invalidate the movie list to refresh the data
     }),
   }),
 });
 
+// Export hooks for usage in functional components
 export const {
   useListMoviesQuery,
   useSearchMoviesQuery,
@@ -82,4 +95,5 @@ export const {
   useFreeMoviesQuery,
   useDeleteMovieMutation, // Added delete mutation
   useUpdateMovieMutation, // Added update mutation
+  useCreateMovieMutation, // Added create mutation
 } = movieApi;
